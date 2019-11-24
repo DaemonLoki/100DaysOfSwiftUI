@@ -19,15 +19,16 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors: [.init(.systemBackground), .init(.blue)]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+                .blur(radius: 20)
             
-            VStack(spacing: 30) {
+            VStack(spacing: 50) {
                 VStack {
                     Text("Tap the flag of:")
-                        .foregroundColor(.white)
+                        .font(.subheadline)
                     
                     Text(countries[correctAnswer])
-                        .foregroundColor(.white)
                         .font(.largeTitle)
                         .fontWeight(.black)
                         .frame(width: 300)
@@ -39,9 +40,9 @@ struct ContentView: View {
                     }) {
                         Image(self.countries[number])
                             .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                            .shadow(color: .black, radius: 2)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.init(.tertiarySystemBackground), lineWidth: 1))
+                            .shadow(color: .primary, radius: 5)
                     }
                 }
                 
@@ -84,6 +85,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .environment(\.colorScheme, .light)
+            ContentView()
+            .environment(\.colorScheme, .dark)
+        }
     }
 }
