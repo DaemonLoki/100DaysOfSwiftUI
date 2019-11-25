@@ -8,6 +8,18 @@
 
 import SwiftUI
 
+struct FlagImage: View {
+    let name: String
+    
+    var body: some View {
+        return Image(name)
+            .renderingMode(.original)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.init(.tertiarySystemBackground), lineWidth: 1))
+            .shadow(color: .primary, radius: 5)
+    }
+}
+
 struct ContentView: View {
     
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
@@ -38,11 +50,7 @@ struct ContentView: View {
                     Button(action: {
                         self.flagTapped(number)
                     }) {
-                        Image(self.countries[number])
-                            .renderingMode(.original)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.init(.tertiarySystemBackground), lineWidth: 1))
-                            .shadow(color: .primary, radius: 5)
+                        FlagImage(name: self.countries[number])
                     }
                 }
                 
@@ -89,7 +97,7 @@ struct ContentView_Previews: PreviewProvider {
             ContentView()
                 .environment(\.colorScheme, .light)
             ContentView()
-            .environment(\.colorScheme, .dark)
+                .environment(\.colorScheme, .dark)
         }
     }
 }
