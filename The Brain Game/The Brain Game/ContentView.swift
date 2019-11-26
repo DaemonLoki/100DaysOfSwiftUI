@@ -11,9 +11,52 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var moves = ["Rock", "Paper", "Scissors"]
+    @State private var selectedMove = Int.random(in: 0...2)
+    @State private var playerShouldWin = Bool.random()
+    
+    @State private var currentScore = 0
     
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Group {
+                Text("Current score: \(currentScore)")
+                    .font(.largeTitle)
+                    .fontWeight(.black)
+                    .padding(.top)
+                Divider()
+                Text(moves[selectedMove])
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Text(playerShouldWin ? "WIN" : "LOSE")
+                    .font(.title)
+                    .foregroundColor(playerShouldWin ? .green : .red)
+            }
+            
+            Group {
+                HStack {
+                    Button(action: {
+                        print("Rock")
+                    }) {
+                        Text("Rock")
+                    }
+                    Spacer()
+                    Button(action: {
+                        print("Paper")
+                    }) {
+                        Text("Paper")
+                    }
+                    Spacer()
+                    Button(action: {
+                        print("Scissors")
+                    }) {
+                        Text("Scissors")
+                    }
+                }
+            }.padding(.top, 100)
+                .padding(50)
+            
+            Spacer()
+        }
     }
 }
 
