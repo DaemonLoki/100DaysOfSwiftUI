@@ -13,6 +13,7 @@
 		ACD27B0F238DC25200D75D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD27B0E238DC25200D75D61 /* Assets.xcassets */; };
 		ACD27B12238DC25200D75D61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD27B11238DC25200D75D61 /* Preview Assets.xcassets */; };
 		ACD27B15238DC25200D75D61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD27B13238DC25200D75D61 /* LaunchScreen.storyboard */; };
+		ACD27B1D238DF0D400D75D61 /* TopCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD27B1C238DF0D400D75D61 /* TopCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ACD27B11238DC25200D75D61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACD27B14238DC25200D75D61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACD27B16238DC25200D75D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACD27B1C238DF0D400D75D61 /* TopCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				ACD27B08238DC25100D75D61 /* AppDelegate.swift */,
 				ACD27B0A238DC25100D75D61 /* SceneDelegate.swift */,
 				ACD27B0C238DC25100D75D61 /* ContentView.swift */,
+				ACD27B1C238DF0D400D75D61 /* TopCard.swift */,
 				ACD27B0E238DC25200D75D61 /* Assets.xcassets */,
 				ACD27B13238DC25200D75D61 /* LaunchScreen.storyboard */,
 				ACD27B16238DC25200D75D61 /* Info.plist */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACD27B09238DC25100D75D61 /* AppDelegate.swift in Sources */,
+				ACD27B1D238DF0D400D75D61 /* TopCard.swift in Sources */,
 				ACD27B0B238DC25100D75D61 /* SceneDelegate.swift in Sources */,
 				ACD27B0D238DC25100D75D61 /* ContentView.swift in Sources */,
 			);
