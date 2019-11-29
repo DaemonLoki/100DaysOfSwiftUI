@@ -13,36 +13,63 @@ struct ContentView: View {
     @State private var usedWords = [String]()
     @State private var rootWord = ""
     @State private var newWord = ""
-    @State private var score: Double = 0
+    @State private var score: CGFloat = 0
     
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    private let animationDuration = 0.7
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                TextField("Enter your word", text: $newWord, onCommit: addNewWord)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .autocapitalization(.none)
+        ZStack {
+            Color.init(.systemBackground)
+                .edgesIgnoringSafeArea(.all)
+            
+            NavigationView {
+                VStack {
+                    VStack(spacing: 5) {
+                        Text("Score".uppercased())
+                            .foregroundColor(.secondary)
+                            .font(.caption)
+                        
+                        Rectangle()
+                            .fill(Color.clear)
+                            .frame(width: 300, height: 30)
+                            .modifier(ScoreModifier(score: score))
+                        .padding()
+                    }
+                    .padding(.top)
+                    .background(Color.init(.secondarySystemBackground))
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
                     .padding()
-                
-                List(usedWords, id: \.self) {
-                    Image(systemName: "\($0.count).circle")
-                    Text($0)
+                    
+                    
+                    TextField("Enter your word", text: $newWord, onCommit: addNewWord)
+                        .autocapitalization(.none)
+                        .padding()
+                        .background(Color.init(.secondarySystemBackground))
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                    
+                    List(usedWords, id: \.self) {
+                        Image(systemName: "\($0.count).circle")
+                        Text($0)
+                    }.onAppear {
+                        UITableView.appearance().separatorColor = .clear
+                    }
+                    
+                    
                 }
-                
-                Text("Score: \(score, specifier: "%.2f")")
-                    .font(.largeTitle)
-                    .padding()
-            }
-            .navigationBarTitle(rootWord)
-            .navigationBarItems(leading: Button(action: startGame) {
-                Text("Restart Game")
-            })
-                .onAppear(perform: startGame)
-                .alert(isPresented: $showingError) {
-                    Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+                .navigationBarTitle(rootWord)
+                .navigationBarItems(leading: Button(action: startGame) {
+                    Text("Restart Game")
+                })
+                    .onAppear(perform: startGame)
+                    .alert(isPresented: $showingError) {
+                        Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+                }
             }
         }
     }
@@ -61,7 +88,9 @@ struct ContentView: View {
         rootWord = allWords.randomElement() ?? "silkworm"
         usedWords = []
         newWord = ""
-        score = 0
+        withAnimation(.easeInOut(duration: animationDuration)) {
+            score = 0
+        }
     }
     
     func addNewWord() {
@@ -86,7 +115,9 @@ struct ContentView: View {
             return
         }
         
-        score += Double(1 + 0.1 * Double(answer.count))
+        withAnimation(.easeInOut(duration: animationDuration)) {
+            score += CGFloat(1 + 0.1 * CGFloat(answer.count))
+        }
         
         usedWords.insert(answer, at: 0)
         newWord = ""
@@ -124,6 +155,30 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+}
+
+struct ScoreModifier: AnimatableModifier {
+    var score: CGFloat = 0
+    
+    var animatableData: CGFloat {
+        get { score }
+        set { score = newValue }
+    }
+    
+    func body(content: Content) -> some View {
+        content
+            .overlay(LabelView(score: score))
+    }
+    
+    struct LabelView: View {
+        let score: CGFloat
+        
+        var body: some View {
+            Text("\(score, specifier: "%.2f")")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+        }
     }
 }
 
