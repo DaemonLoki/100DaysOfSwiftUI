@@ -32,6 +32,9 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle(rootWord)
+            .navigationBarItems(leading: Button(action: startGame) {
+                Text("Restart Game")
+            })
             .onAppear(perform: startGame)
             .alert(isPresented: $showingError) {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
@@ -49,7 +52,10 @@ struct ContentView: View {
         }
         
         let allWords = startWords.components(separatedBy: "\n")
+        
         rootWord = allWords.randomElement() ?? "silkworm"
+        usedWords = []
+        newWord = ""
     }
     
     func addNewWord() {
