@@ -17,6 +17,7 @@
 		ACB8677D2395524F00A524A5 /* CardDragAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8677C2395524F00A524A5 /* CardDragAnimation.swift */; };
 		ACB8677F2395535C00A524A5 /* LetterAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8677E2395535C00A524A5 /* LetterAnimationView.swift */; };
 		ACB867812395598C00A524A5 /* ShowHideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB867802395598C00A524A5 /* ShowHideTransition.swift */; };
+		ACB8678323955BB200A524A5 /* CustomTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8678223955BB200A524A5 /* CustomTransitionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		ACB8677C2395524F00A524A5 /* CardDragAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDragAnimation.swift; sourceTree = "<group>"; };
 		ACB8677E2395535C00A524A5 /* LetterAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterAnimationView.swift; sourceTree = "<group>"; };
 		ACB867802395598C00A524A5 /* ShowHideTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHideTransition.swift; sourceTree = "<group>"; };
+		ACB8678223955BB200A524A5 /* CustomTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				ACB867662395054400A524A5 /* AppDelegate.swift */,
 				ACB867682395054400A524A5 /* SceneDelegate.swift */,
 				ACB8676A2395054400A524A5 /* ContentView.swift */,
+				ACB8678223955BB200A524A5 /* CustomTransitionView.swift */,
 				ACB867802395598C00A524A5 /* ShowHideTransition.swift */,
 				ACB8677E2395535C00A524A5 /* LetterAnimationView.swift */,
 				ACB8677C2395524F00A524A5 /* CardDragAnimation.swift */,
@@ -164,6 +167,7 @@
 				ACB867672395054400A524A5 /* AppDelegate.swift in Sources */,
 				ACB867692395054400A524A5 /* SceneDelegate.swift in Sources */,
 				ACB8676B2395054400A524A5 /* ContentView.swift in Sources */,
+				ACB8678323955BB200A524A5 /* CustomTransitionView.swift in Sources */,
 				ACB8677D2395524F00A524A5 /* CardDragAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
