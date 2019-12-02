@@ -14,6 +14,8 @@
 		ACB867702395054500A524A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB8676F2395054500A524A5 /* Preview Assets.xcassets */; };
 		ACB867732395054500A524A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB867712395054500A524A5 /* LaunchScreen.storyboard */; };
 		ACB8677B23954C2000A524A5 /* AnimationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8677A23954C2000A524A5 /* AnimationStackView.swift */; };
+		ACB8677D2395524F00A524A5 /* CardDragAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8677C2395524F00A524A5 /* CardDragAnimation.swift */; };
+		ACB8677F2395535C00A524A5 /* LetterAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8677E2395535C00A524A5 /* LetterAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		ACB867722395054500A524A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB867742395054500A524A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB8677A23954C2000A524A5 /* AnimationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStackView.swift; sourceTree = "<group>"; };
+		ACB8677C2395524F00A524A5 /* CardDragAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDragAnimation.swift; sourceTree = "<group>"; };
+		ACB8677E2395535C00A524A5 /* LetterAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				ACB867662395054400A524A5 /* AppDelegate.swift */,
 				ACB867682395054400A524A5 /* SceneDelegate.swift */,
 				ACB8676A2395054400A524A5 /* ContentView.swift */,
+				ACB8677E2395535C00A524A5 /* LetterAnimationView.swift */,
+				ACB8677C2395524F00A524A5 /* CardDragAnimation.swift */,
 				ACB8677A23954C2000A524A5 /* AnimationStackView.swift */,
 				ACB8676C2395054500A524A5 /* Assets.xcassets */,
 				ACB867712395054500A524A5 /* LaunchScreen.storyboard */,
@@ -150,9 +156,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB8677B23954C2000A524A5 /* AnimationStackView.swift in Sources */,
+				ACB8677F2395535C00A524A5 /* LetterAnimationView.swift in Sources */,
 				ACB867672395054400A524A5 /* AppDelegate.swift in Sources */,
 				ACB867692395054400A524A5 /* SceneDelegate.swift in Sources */,
 				ACB8676B2395054400A524A5 /* ContentView.swift in Sources */,
+				ACB8677D2395524F00A524A5 /* CardDragAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
