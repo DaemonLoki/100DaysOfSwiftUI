@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var currentScore = 0
     @State private var showAnimation = false
     
-    @State private var selectedAnswer = ""
+    @State private var selectedAnswer = 0
     
     private var flagImages = [
         FlagImage(name: "Germany"),
@@ -49,9 +49,11 @@ struct ContentView: View {
                         self.flagTapped(number)
                     }) {
                         FlagImage(name: self.countries[number])
-                            .opacity(self.showAnimation && number != self.correctAnswer ? 0.2 : 1)
-                            .rotation3DEffect(self.showAnimation && number == self.correctAnswer ? .degrees(360) : .degrees(0), axis: (x: 1, y: 1, z: 1))
-                            .scaleEffect(self.showAnimation && number == self.correctAnswer ? 1.7 : 1)
+                            .overlay(Color.red.opacity(self.showAnimation && number != self.correctAnswer ? 0.8 : 0)
+                                .cornerRadius(10))
+                            .opacity(self.showAnimation && number != self.selectedAnswer ? 0.2 : 1)
+                            .rotation3DEffect(self.showAnimation && number == self.selectedAnswer ? .degrees(360) : .degrees(0), axis: self.correctAnswer == self.selectedAnswer ? (x: 1, y: 1, z: 1) : (x: 0, y: 1, z: 0))
+                            .scaleEffect(self.showAnimation && number == self.selectedAnswer ? 1.7 : 1)
                             .animation(Animation.interpolatingSpring(stiffness: 7, damping: 3)
                                 .speed(5)
                                 .delay(0.2)
@@ -66,16 +68,17 @@ struct ContentView: View {
                     Text("\(currentScore)")
                         .foregroundColor(.white)
                         .font(.largeTitle)
+                        .fontWeight(.black)
                 }
                 
                 Spacer()
             }
         }
         .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text("That's the flag of \(selectedAnswer)."), dismissButton: .default(Text("Continue")) {
+            Alert(title: Text(scoreTitle), message: Text("That's the flag of \(self.countries[selectedAnswer])."), dismissButton: .default(Text("Continue")) {
                 self.askQuestion()
                 self.showAnimation = false
-                })
+            })
         }
     }
     
@@ -87,10 +90,19 @@ struct ContentView: View {
             currentScore -= 1
             scoreTitle = "Wrong"
         }
-        selectedAnswer = self.countries[number]
+        selectedAnswer = number
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.showingScore = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            if self.selectedAnswer == self.correctAnswer {
+                self.showAnimation = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.33) {
+                    self.askQuestion()
+                }
+                
+            } else {
+                self.showingScore = true
+            }
+            
         }
         
     }
