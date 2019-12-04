@@ -8,18 +8,6 @@
 
 import SwiftUI
 
-struct FlagImage: View {
-    let name: String
-    
-    var body: some View {
-        return Image(name)
-            .renderingMode(.original)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.init(.tertiarySystemBackground), lineWidth: 1))
-            .shadow(color: .primary, radius: 5)
-    }
-}
-
 struct ContentView: View {
     
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
@@ -28,6 +16,13 @@ struct ContentView: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var currentScore = 0
+    @State private var showAnimation = false
+    
+    private var flagImages = [
+        FlagImage(name: "Germany"),
+        FlagImage(name: "Italy"),
+        FlagImage(name: "France")
+    ]
     
     var body: some View {
         ZStack {
@@ -48,9 +43,12 @@ struct ContentView: View {
                 
                 ForEach(0 ..< 3) { number in
                     Button(action: {
+                        self.showAnimation = true
                         self.flagTapped(number)
                     }) {
                         FlagImage(name: self.countries[number])
+                            .opacity(self.showAnimation && number != self.correctAnswer ? 0.2 : 1)
+                            .animation(.default)
                     }
                 }
                 
@@ -69,6 +67,7 @@ struct ContentView: View {
         .alert(isPresented: $showingScore) {
             Alert(title: Text(scoreTitle), message: Text("That's the flag of \(self.countries[correctAnswer])."), dismissButton: .default(Text("Continue")) {
                 self.askQuestion()
+                self.showAnimation = false
                 })
         }
     }
@@ -82,7 +81,10 @@ struct ContentView: View {
             scoreTitle = "Wrong"
         }
         
-        showingScore = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.showingScore = true
+        }
+        
     }
     
     func askQuestion() {
