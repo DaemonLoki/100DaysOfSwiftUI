@@ -18,6 +18,8 @@ struct ContentView: View {
     @State private var currentScore = 0
     @State private var showAnimation = false
     
+    @State private var selectedAnswer = ""
+    
     private var flagImages = [
         FlagImage(name: "Germany"),
         FlagImage(name: "Italy"),
@@ -41,14 +43,19 @@ struct ContentView: View {
                         .frame(width: 300)
                 }.padding(.top, 20)
                 
-                ForEach(0 ..< 3) { number in
+                ForEach(0 ..< 3, id: \.self) { number in
                     Button(action: {
                         self.showAnimation = true
                         self.flagTapped(number)
                     }) {
                         FlagImage(name: self.countries[number])
                             .opacity(self.showAnimation && number != self.correctAnswer ? 0.2 : 1)
-                            .animation(.default)
+                            .rotation3DEffect(self.showAnimation && number == self.correctAnswer ? .degrees(360) : .degrees(0), axis: (x: 1, y: 1, z: 1))
+                            .scaleEffect(self.showAnimation && number == self.correctAnswer ? 1.7 : 1)
+                            .animation(Animation.interpolatingSpring(stiffness: 7, damping: 3)
+                                .speed(5)
+                                .delay(0.2)
+                            )
                     }
                 }
                 
@@ -65,7 +72,7 @@ struct ContentView: View {
             }
         }
         .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text("That's the flag of \(self.countries[correctAnswer])."), dismissButton: .default(Text("Continue")) {
+            Alert(title: Text(scoreTitle), message: Text("That's the flag of \(selectedAnswer)."), dismissButton: .default(Text("Continue")) {
                 self.askQuestion()
                 self.showAnimation = false
                 })
@@ -80,6 +87,7 @@ struct ContentView: View {
             currentScore -= 1
             scoreTitle = "Wrong"
         }
+        selectedAnswer = self.countries[number]
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.showingScore = true
