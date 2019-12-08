@@ -8,37 +8,32 @@
 
 import SwiftUI
 
-struct User: Codable {
-    var firstName: String = "Bilbo"
-    var lastName: String = "Baggins"
-}
-
 struct ContentView: View {
     
-    @State private var user = User()
+    @ObservedObject var expenses = Expenses()
     
     var body: some View {
-        VStack {
-            Text("I'm \(user.firstName) \(user.lastName)")
-            
-            TextField("First name", text: $user.firstName)
-            TextField("Last name", text: $user.lastName)
-            
-            Button("Save") {
-                let encoder = JSONEncoder()
-                
-                if let data = try? encoder.encode(self.user) {
-                    UserDefaults.standard.set(data, forKey: "UserData")
+        NavigationView {
+            List {
+                ForEach(expenses.items, id: \.name) { item in
+                    Text(item.name)
                 }
+                .onDelete(perform: removeItems)
             }
+            .navigationBarTitle("iExpense")
+        .navigationBarItems(trailing:
+            Button(action: {
+                let expense = ExpenseItem(name: "Test", type: "Personal", amount: 5)
+                self.expenses.items.append(expense)
+            }) {
+                Image(systemName: "plus")
+            }
+        )
         }
-        .onAppear {
-            guard let data = UserDefaults.standard.data(forKey: "UserData") else { return }
-            
-            let decoder = JSONDecoder()
-            guard let decodedUser = try? decoder.decode(User.self, from: data) else { return }
-            self.user = decodedUser
-        }
+    }
+    
+    func removeItems(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
     }
 }
 
