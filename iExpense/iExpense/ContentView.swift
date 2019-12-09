@@ -26,22 +26,20 @@ struct ContentView: View {
                         
                         Spacer()
                         Text("$ \(item.amount)")
+                            .amountStyle(for: item.amount)
                     }
                 }
                 .onDelete(perform: removeItems)
             }
             .navigationBarTitle("iExpense")
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.showingAddExpense = true
-                }) {
-                    Image(systemName: "plus")
-                }
-            )
-            .navigationBarItems(leading: EditButton())
-        }
-        .sheet(isPresented: $showingAddExpense) { 
-            AddView(expenses: self.expenses)
+            .navigationBarItems(leading: EditButton(), trailing: Button(action: {
+                self.showingAddExpense = true
+            }) {
+                Image(systemName: "plus")
+            })
+            .sheet(isPresented: $showingAddExpense) {
+                AddView(expenses: self.expenses)
+            }
         }
     }
     

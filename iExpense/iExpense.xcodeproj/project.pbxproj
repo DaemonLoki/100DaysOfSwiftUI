@@ -16,6 +16,7 @@
 		ACF3F6DE239D467A00C6ABB5 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F6DD239D467A00C6ABB5 /* ExpenseItem.swift */; };
 		ACF3F6E0239D46DC00C6ABB5 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F6DF239D46DC00C6ABB5 /* Expenses.swift */; };
 		ACF3F6E2239E62B700C6ABB5 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F6E1239E62B700C6ABB5 /* AddView.swift */; };
+		ACF3F6E4239E7E2800C6ABB5 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F6E3239E7E2800C6ABB5 /* Modifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		ACF3F6DD239D467A00C6ABB5 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		ACF3F6DF239D46DC00C6ABB5 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		ACF3F6E1239E62B700C6ABB5 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		ACF3F6E3239E7E2800C6ABB5 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				ACC9F659239BB3EA00DFD53E /* AppDelegate.swift */,
 				ACC9F65B239BB3EA00DFD53E /* SceneDelegate.swift */,
 				ACC9F65D239BB3EA00DFD53E /* ContentView.swift */,
+				ACF3F6E3239E7E2800C6ABB5 /* Modifiers.swift */,
 				ACF3F6E1239E62B700C6ABB5 /* AddView.swift */,
 				ACF3F6DD239D467A00C6ABB5 /* ExpenseItem.swift */,
 				ACF3F6DF239D46DC00C6ABB5 /* Expenses.swift */,
@@ -157,6 +160,7 @@
 			files = (
 				ACF3F6E0239D46DC00C6ABB5 /* Expenses.swift in Sources */,
 				ACC9F65A239BB3EA00DFD53E /* AppDelegate.swift in Sources */,
+				ACF3F6E4239E7E2800C6ABB5 /* Modifiers.swift in Sources */,
 				ACF3F6E2239E62B700C6ABB5 /* AddView.swift in Sources */,
 				ACC9F65C239BB3EA00DFD53E /* SceneDelegate.swift in Sources */,
 				ACC9F65E239BB3EA00DFD53E /* ContentView.swift in Sources */,
