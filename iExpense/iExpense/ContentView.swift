@@ -38,6 +38,7 @@ struct ContentView: View {
                     Image(systemName: "plus")
                 }
             )
+            .navigationBarItems(leading: EditButton())
         }
         .sheet(isPresented: $showingAddExpense) { 
             AddView(expenses: self.expenses)
