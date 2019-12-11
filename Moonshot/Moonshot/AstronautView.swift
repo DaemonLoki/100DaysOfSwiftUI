@@ -9,52 +9,31 @@
 import SwiftUI
 
 struct AstronautView: View {
-    let crewMember: MissionView.CrewMember
-    let chiefTitle = "Commander"
-    
-    @State private var isStarScaled = false
+    let astronaut: Astronaut
     
     var body: some View {
-        HStack {
-            ZStack(alignment: .bottomTrailing) {
-                Image(crewMember.astronaut.id)
-                    .resizable()
-                    .frame(width: 83, height: 60)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(crewMember.role == chiefTitle ? Color.red : Color.secondary, lineWidth: 2))
-                    .shadow(radius: 5)
-                
-                if crewMember.role == chiefTitle {
-                    Image(systemName: "star.fill")
-                        .foregroundColor(Color.yellow)
-                        .padding(.trailing, 8)
-                        .scaleEffect(isStarScaled ? 1.3 : 1.0)
-                        .animation(Animation.default.repeatForever())
-                        .onAppear {
-                            self.isStarScaled = true
-                    }
+        GeometryReader { geometry in
+            ScrollView(.vertical) {
+                VStack {
+                    Image(self.astronaut.id)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: geometry.size.width)
+                    
+                    Text(self.astronaut.description)
+                        .padding()
+                        .layoutPriority(1)
                 }
             }
-            
-            VStack(alignment: .leading) {
-                Text(crewMember.astronaut.name)
-                    .font(.headline)
-                Text(crewMember.role)
-                    .foregroundColor(.secondary)
-            }
-            
-            Spacer()
         }
-        .padding(.horizontal)
+        .navigationBarTitle(Text(astronaut.name), displayMode: .inline)
     }
 }
 
 struct AstronautView_Previews: PreviewProvider {
-    
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
-    static let role = "Commander"
     
     static var previews: some View {
-        AstronautView(crewMember: MissionView.CrewMember(role: role, astronaut: astronauts[0]))
+        AstronautView(astronaut: astronauts[1])
     }
 }

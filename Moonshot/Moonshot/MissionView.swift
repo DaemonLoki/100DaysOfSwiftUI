@@ -49,7 +49,7 @@ struct MissionView: View {
                         .padding()
                     
                     ForEach(self.astronauts, id: \.role) { crewMember in
-                        AstronautView(crewMember: crewMember)
+                        AstronautRow(crewMember: crewMember)
                     }
                     
                     Spacer(minLength: 25)
