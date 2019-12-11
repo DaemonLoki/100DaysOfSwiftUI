@@ -19,22 +19,7 @@ struct ContentView: View {
         NavigationView {
             List(missions) { mission in
                 return NavigationLink(destination: MissionView(mission: mission, missions: self.missions, astronauts: self.astronauts)) {
-                    Image(mission.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 44, height: 44)
-                    
-                    VStack(alignment: .leading) {
-                        Text(mission.displayName)
-                            .font(.headline)
-                        
-                        Text(self.showingDates ? mission.formattedLaunchDate : mission.crew.compactMap { role in
-                            return self.astronauts.first { (a: Astronaut) -> Bool in
-                                a.id == role.name
-                            }?.name
-                        }.joined(separator: "\n"))
-                            .font(.footnote)
-                    }
+                    MissionRow(mission: mission, astronauts: self.astronauts, showingDates: self.$showingDates)
                 }
             }
             .navigationBarTitle("Moonshot")

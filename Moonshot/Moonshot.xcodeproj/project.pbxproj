@@ -15,6 +15,7 @@
 		AC860A3E23A15AD6009C7CD9 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC860A3D23A15AD6009C7CD9 /* MissionView.swift */; };
 		AC860A4023A1747D009C7CD9 /* AstronautRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC860A3F23A1747D009C7CD9 /* AstronautRow.swift */; };
 		AC860A4223A17ABC009C7CD9 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC860A4123A17ABC009C7CD9 /* AstronautView.swift */; };
+		AC860A4423A19199009C7CD9 /* MissionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC860A4323A19199009C7CD9 /* MissionRow.swift */; };
 		ACC0B9CB23A04EAD00AAC54D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC0B9CA23A04EAD00AAC54D /* AppDelegate.swift */; };
 		ACC0B9CD23A04EAD00AAC54D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC0B9CC23A04EAD00AAC54D /* SceneDelegate.swift */; };
 		ACC0B9CF23A04EAD00AAC54D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC0B9CE23A04EAD00AAC54D /* ContentView.swift */; };
@@ -32,6 +33,7 @@
 		AC860A3D23A15AD6009C7CD9 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		AC860A3F23A1747D009C7CD9 /* AstronautRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautRow.swift; sourceTree = "<group>"; };
 		AC860A4123A17ABC009C7CD9 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
+		AC860A4323A19199009C7CD9 /* MissionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRow.swift; sourceTree = "<group>"; };
 		ACC0B9C723A04EAD00AAC54D /* Moonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC0B9CA23A04EAD00AAC54D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC0B9CC23A04EAD00AAC54D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				AC860A3823A14DAD009C7CD9 /* Bundle-Decodable.swift */,
 				ACC0B9CC23A04EAD00AAC54D /* SceneDelegate.swift */,
 				ACC0B9CE23A04EAD00AAC54D /* ContentView.swift */,
+				AC860A4323A19199009C7CD9 /* MissionRow.swift */,
 				AC860A3D23A15AD6009C7CD9 /* MissionView.swift */,
 				AC860A3F23A1747D009C7CD9 /* AstronautRow.swift */,
 				ACC0B9D023A04EAE00AAC54D /* Assets.xcassets */,
@@ -185,6 +188,7 @@
 				AC860A3C23A14FB4009C7CD9 /* Mission.swift in Sources */,
 				AC860A4023A1747D009C7CD9 /* AstronautRow.swift in Sources */,
 				ACC0B9CB23A04EAD00AAC54D /* AppDelegate.swift in Sources */,
+				AC860A4423A19199009C7CD9 /* MissionRow.swift in Sources */,
 				ACC0B9CD23A04EAD00AAC54D /* SceneDelegate.swift in Sources */,
 				AC860A3923A14DAD009C7CD9 /* Bundle-Decodable.swift in Sources */,
 				ACC0B9CF23A04EAD00AAC54D /* ContentView.swift in Sources */,
