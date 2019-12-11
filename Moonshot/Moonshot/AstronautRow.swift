@@ -10,12 +10,13 @@ import SwiftUI
 
 struct AstronautRow: View {
     let crewMember: MissionView.CrewMember
+    let missions: [Mission]
     let chiefTitle = "Commander"
     
     @State private var isStarScaled = false
     
     var body: some View {
-        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
+        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, missions: self.missions)) {
             HStack {
                 ZStack(alignment: .bottomTrailing) {
                     Image(crewMember.astronaut.id)
@@ -55,9 +56,10 @@ struct AstronautRow: View {
 struct AstronautRow_Previews: PreviewProvider {
     
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
+    static let missions: [Mission] = Bundle.main.decode("missions.json")
     static let role = "Commander"
     
     static var previews: some View {
-        AstronautRow(crewMember: MissionView.CrewMember(role: role, astronaut: astronauts[0]))
+        AstronautRow(crewMember: MissionView.CrewMember(role: role, astronaut: astronauts[0]), missions: missions)
     }
 }

@@ -11,6 +11,7 @@ import SwiftUI
 struct MissionView: View {
     
     let mission: Mission
+    let missions: [Mission]
     
     struct CrewMember {
         let role: String
@@ -19,8 +20,9 @@ struct MissionView: View {
     
     let astronauts: [CrewMember]
     
-    init(mission: Mission, astronauts: [Astronaut]) {
+    init(mission: Mission, missions: [Mission], astronauts: [Astronaut]) {
         self.mission = mission
+        self.missions = missions
         
         var matches = [CrewMember]()
         
@@ -56,7 +58,7 @@ struct MissionView: View {
                         .padding()
                     
                     ForEach(self.astronauts, id: \.role) { crewMember in
-                        AstronautRow(crewMember: crewMember)
+                        AstronautRow(crewMember: crewMember, missions: self.missions)
                     }
                     
                     Spacer(minLength: 25)
@@ -72,6 +74,6 @@ struct MissionView_Previews: PreviewProvider {
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     
     static var previews: some View {
-        MissionView(mission: missions[0], astronauts: astronauts)
+        MissionView(mission: missions[0], missions: missions, astronauts: astronauts)
     }
 }
