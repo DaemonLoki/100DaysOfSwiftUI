@@ -45,6 +45,13 @@ struct MissionView: View {
                         .frame(maxWidth: geometry.size.width * 0.7)
                         .padding(.top)
                     
+                    if self.mission.launchDate != nil {
+                        Text(self.mission.formattedLaunchDate)
+                            .font(.title)
+                            .foregroundColor(.secondary)
+                            .padding()
+                    }
+                    
                     Text(self.mission.description)
                         .padding()
                     
