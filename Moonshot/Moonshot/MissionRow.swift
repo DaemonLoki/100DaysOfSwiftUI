@@ -16,24 +16,32 @@ struct MissionRow: View {
     @Binding var showingDates: Bool
     
     var body: some View {
-        HStack {
-            Image(mission.image)
+        HStack(spacing: 20) {
+            Image(self.mission.image)
             .resizable()
             .scaledToFit()
-            .frame(width: 44, height: 44)
+            .frame(width: 120, height: 120)
         
             VStack(alignment: .leading) {
-                Text(mission.displayName)
+                Text(self.mission.displayName)
                     .font(.headline)
                 
-                Text(self.showingDates ? mission.formattedLaunchDate : mission.crew.compactMap { role in
+                Text(self.showingDates ? self.mission.formattedLaunchDate : self.mission.crew.compactMap { role in
                     return self.astronauts.first { (a: Astronaut) -> Bool in
                         a.id == role.name
                     }?.name
                 }.joined(separator: "\n"))
                     .font(.footnote)
             }
+            
+            Spacer()
         }
+        .padding()
+        .frame(width: 336, height: 270)
+        .background(Color.init(.secondarySystemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .shadow(radius: 10)
+        .padding(.horizontal, 20)
     }
 }
 
