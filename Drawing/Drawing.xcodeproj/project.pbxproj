@@ -17,6 +17,8 @@
 		ACE7AEC823A3BE4C0012E2AC /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AEC723A3BE4C0012E2AC /* ArcView.swift */; };
 		ACE7AECA23A3C41F0012E2AC /* FlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AEC923A3C41F0012E2AC /* FlowerView.swift */; };
 		ACE7AECC23A3CA730012E2AC /* ImageFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AECB23A3CA730012E2AC /* ImageFrameView.swift */; };
+		ACE7AECE23A3CDA50012E2AC /* ColorCyclingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AECD23A3CDA50012E2AC /* ColorCyclingCircle.swift */; };
+		ACE7AED023A3CF610012E2AC /* ColorCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AECF23A3CF610012E2AC /* ColorCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		ACE7AEC723A3BE4C0012E2AC /* ArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
 		ACE7AEC923A3C41F0012E2AC /* FlowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerView.swift; sourceTree = "<group>"; };
 		ACE7AECB23A3CA730012E2AC /* ImageFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFrameView.swift; sourceTree = "<group>"; };
+		ACE7AECD23A3CDA50012E2AC /* ColorCyclingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingCircle.swift; sourceTree = "<group>"; };
+		ACE7AECF23A3CF610012E2AC /* ColorCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				ACE7AE9523A262C10012E2AC /* ContentView.swift */,
 				ACE7AEC923A3C41F0012E2AC /* FlowerView.swift */,
 				ACE7AEC723A3BE4C0012E2AC /* ArcView.swift */,
+				ACE7AECD23A3CDA50012E2AC /* ColorCyclingCircle.swift */,
+				ACE7AECF23A3CF610012E2AC /* ColorCircleView.swift */,
 				ACE7AEC523A3BD7C0012E2AC /* TriangleView.swift */,
 				ACE7AE9723A262C60012E2AC /* Assets.xcassets */,
 				ACE7AECB23A3CA730012E2AC /* ImageFrameView.swift */,
@@ -161,8 +167,10 @@
 				ACE7AEC623A3BD7C0012E2AC /* TriangleView.swift in Sources */,
 				ACE7AECA23A3C41F0012E2AC /* FlowerView.swift in Sources */,
 				ACE7AEC823A3BE4C0012E2AC /* ArcView.swift in Sources */,
+				ACE7AED023A3CF610012E2AC /* ColorCircleView.swift in Sources */,
 				ACE7AE9223A262C10012E2AC /* AppDelegate.swift in Sources */,
 				ACE7AE9423A262C10012E2AC /* SceneDelegate.swift in Sources */,
+				ACE7AECE23A3CDA50012E2AC /* ColorCyclingCircle.swift in Sources */,
 				ACE7AECC23A3CA730012E2AC /* ImageFrameView.swift in Sources */,
 				ACE7AE9623A262C10012E2AC /* ContentView.swift in Sources */,
 			);

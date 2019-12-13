@@ -37,6 +37,12 @@ struct ContentView: View {
                 }
                 .padding()
                 
+                NavigationLink(destination: ColorCircleView()) {
+                    Text("Color Circle")
+                        .font(.title)
+                }
+                .padding()
+                
                 Spacer()
             }
             .navigationBarTitle("Drawing")
