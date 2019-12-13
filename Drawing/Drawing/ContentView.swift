@@ -31,6 +31,12 @@ struct ContentView: View {
                 }
                 .padding()
                 
+                NavigationLink(destination: ImageFrameView()) {
+                    Text("Image Frame")
+                        .font(.title)
+                }
+                .padding()
+                
                 Spacer()
             }
             .navigationBarTitle("Drawing")
