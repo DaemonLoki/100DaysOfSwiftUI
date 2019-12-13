@@ -15,6 +15,7 @@
 		ACE7AE9E23A262C60012E2AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE7AE9C23A262C60012E2AC /* LaunchScreen.storyboard */; };
 		ACE7AEC623A3BD7C0012E2AC /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AEC523A3BD7C0012E2AC /* TriangleView.swift */; };
 		ACE7AEC823A3BE4C0012E2AC /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AEC723A3BE4C0012E2AC /* ArcView.swift */; };
+		ACE7AECA23A3C41F0012E2AC /* FlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AEC923A3C41F0012E2AC /* FlowerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		ACE7AE9F23A262C60012E2AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACE7AEC523A3BD7C0012E2AC /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
 		ACE7AEC723A3BE4C0012E2AC /* ArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
+		ACE7AEC923A3C41F0012E2AC /* FlowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				ACE7AE9123A262C10012E2AC /* AppDelegate.swift */,
 				ACE7AE9323A262C10012E2AC /* SceneDelegate.swift */,
 				ACE7AE9523A262C10012E2AC /* ContentView.swift */,
+				ACE7AEC923A3C41F0012E2AC /* FlowerView.swift */,
 				ACE7AEC723A3BE4C0012E2AC /* ArcView.swift */,
 				ACE7AEC523A3BD7C0012E2AC /* TriangleView.swift */,
 				ACE7AE9723A262C60012E2AC /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE7AEC623A3BD7C0012E2AC /* TriangleView.swift in Sources */,
+				ACE7AECA23A3C41F0012E2AC /* FlowerView.swift in Sources */,
 				ACE7AEC823A3BE4C0012E2AC /* ArcView.swift in Sources */,
 				ACE7AE9223A262C10012E2AC /* AppDelegate.swift in Sources */,
 				ACE7AE9423A262C10012E2AC /* SceneDelegate.swift in Sources */,

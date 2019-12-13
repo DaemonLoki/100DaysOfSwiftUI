@@ -23,6 +23,13 @@ struct ContentView: View {
                     Text("Arc")
                         .font(.title)
                 }
+                .padding()
+                
+                NavigationLink(destination: FlowerView()) {
+                    Text("Flower")
+                        .font(.title)
+                }
+                .padding()
                 
                 Spacer()
             }
