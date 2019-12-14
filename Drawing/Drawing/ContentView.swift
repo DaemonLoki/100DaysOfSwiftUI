@@ -43,6 +43,12 @@ struct ContentView: View {
                 }
                 .padding()
                 
+                NavigationLink(destination: SpecialEffectsView()) {
+                    Text("Special Effects")
+                        .font(.title)
+                }
+                .padding()
+                
                 Spacer()
             }
             .navigationBarTitle("Drawing")
