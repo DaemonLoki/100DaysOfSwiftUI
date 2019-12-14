@@ -12,50 +12,58 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                NavigationLink(destination: TriangleView()) {
-                    Text("Triangle")
-                        .font(.title)
+            ScrollView {
+                VStack(spacing: 20) {
+                    NavigationLink(destination: TriangleView()) {
+                        Text("Triangle")
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    NavigationLink(destination: ArcView()) {
+                        Text("Arc")
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    NavigationLink(destination: FlowerView()) {
+                        Text("Flower")
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    NavigationLink(destination: ImageFrameView()) {
+                        Text("Image Frame")
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    NavigationLink(destination: ColorCircleView()) {
+                        Text("Color Circle")
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    NavigationLink(destination: SpecialEffectsView()) {
+                        Text("Special Effects")
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    NavigationLink(destination: BlurSaturationView()) {
+                        Text("Blur / Saturation")
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    NavigationLink(destination: TrapezoidView()) {
+                        Text("Trapezoid")
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    Spacer()
                 }
-                .padding()
-                
-                NavigationLink(destination: ArcView()) {
-                    Text("Arc")
-                        .font(.title)
-                }
-                .padding()
-                
-                NavigationLink(destination: FlowerView()) {
-                    Text("Flower")
-                        .font(.title)
-                }
-                .padding()
-                
-                NavigationLink(destination: ImageFrameView()) {
-                    Text("Image Frame")
-                        .font(.title)
-                }
-                .padding()
-                
-                NavigationLink(destination: ColorCircleView()) {
-                    Text("Color Circle")
-                        .font(.title)
-                }
-                .padding()
-                
-                NavigationLink(destination: SpecialEffectsView()) {
-                    Text("Special Effects")
-                        .font(.title)
-                }
-                .padding()
-                
-                NavigationLink(destination: BlurSaturationView()) {
-                    Text("Blur / Saturation")
-                        .font(.title)
-                }
-                .padding()
-                
-                Spacer()
             }
             .navigationBarTitle("Drawing")
         }

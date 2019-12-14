@@ -21,6 +21,7 @@
 		ACE7AED023A3CF610012E2AC /* ColorCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AECF23A3CF610012E2AC /* ColorCircleView.swift */; };
 		ACE7AED623A573C40012E2AC /* SpecialEffectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AED523A573C40012E2AC /* SpecialEffectsView.swift */; };
 		ACE7AED823A577690012E2AC /* BlurSaturationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AED723A577690012E2AC /* BlurSaturationView.swift */; };
+		ACE7AEDA23A578920012E2AC /* TrapezoidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AED923A578920012E2AC /* TrapezoidView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		ACE7AECF23A3CF610012E2AC /* ColorCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircleView.swift; sourceTree = "<group>"; };
 		ACE7AED523A573C40012E2AC /* SpecialEffectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialEffectsView.swift; sourceTree = "<group>"; };
 		ACE7AED723A577690012E2AC /* BlurSaturationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurSaturationView.swift; sourceTree = "<group>"; };
+		ACE7AED923A578920012E2AC /* TrapezoidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapezoidView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				ACE7AECD23A3CDA50012E2AC /* ColorCyclingCircle.swift */,
 				ACE7AED523A573C40012E2AC /* SpecialEffectsView.swift */,
 				ACE7AED723A577690012E2AC /* BlurSaturationView.swift */,
+				ACE7AED923A578920012E2AC /* TrapezoidView.swift */,
 				ACE7AECF23A3CF610012E2AC /* ColorCircleView.swift */,
 				ACE7AEC523A3BD7C0012E2AC /* TriangleView.swift */,
 				ACE7AE9723A262C60012E2AC /* Assets.xcassets */,
@@ -173,6 +176,7 @@
 				ACE7AEC623A3BD7C0012E2AC /* TriangleView.swift in Sources */,
 				ACE7AECA23A3C41F0012E2AC /* FlowerView.swift in Sources */,
 				ACE7AEC823A3BE4C0012E2AC /* ArcView.swift in Sources */,
+				ACE7AEDA23A578920012E2AC /* TrapezoidView.swift in Sources */,
 				ACE7AED023A3CF610012E2AC /* ColorCircleView.swift in Sources */,
 				ACE7AE9223A262C10012E2AC /* AppDelegate.swift in Sources */,
 				ACE7AE9423A262C10012E2AC /* SceneDelegate.swift in Sources */,
