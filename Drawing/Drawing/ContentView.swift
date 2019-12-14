@@ -49,6 +49,12 @@ struct ContentView: View {
                 }
                 .padding()
                 
+                NavigationLink(destination: BlurSaturationView()) {
+                    Text("Blur / Saturation")
+                        .font(.title)
+                }
+                .padding()
+                
                 Spacer()
             }
             .navigationBarTitle("Drawing")

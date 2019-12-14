@@ -9,11 +9,45 @@
 import SwiftUI
 
 struct SpecialEffectsView: View {
+    
+    @State private var amount: CGFloat = 0
+    @State private var currentRotation: Double = 0
+    
     var body: some View {
-        Image("meetup_talk")
-            .resizable()
-            .scaledToFill()
-            .colorMultiply(.red)
+        VStack {
+            ZStack {
+                Circle()
+                    .fill(Color.red)
+                    .frame(width: 200 * amount)
+                    .offset(x: -50, y: -80)
+                    .blendMode(.screen)
+                
+                Circle()
+                    .fill(Color.green)
+                    .frame(width: 200 * amount)
+                    .offset(x: 50, y: -80)
+                    .blendMode(.screen)
+                
+                Circle()
+                .fill(Color.blue)
+                .frame(width: 200 * amount)
+                .blendMode(.screen)
+            }
+            .frame(width: 300, height: 300)
+            .rotationEffect(.degrees(currentRotation))
+            .onAppear {
+                withAnimation(Animation.interactiveSpring().speed(0.2).repeatForever()) {
+                    self.currentRotation = 360
+                }
+                self.currentRotation = 360
+            }
+            
+            Slider(value: $amount)
+                .padding()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
