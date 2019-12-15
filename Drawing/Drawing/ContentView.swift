@@ -62,7 +62,17 @@ struct ContentView: View {
                     }
                     .padding()
                     
-                    Spacer()
+                    NavigationLink(destination: CheckerboardView()) {
+                        Text("Checkerboard")
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    NavigationLink(destination: SpirographView()) {
+                        Text("Spirograph")
+                            .font(.title)
+                    }
+                    .padding()
                 }
             }
             .navigationBarTitle("Drawing")

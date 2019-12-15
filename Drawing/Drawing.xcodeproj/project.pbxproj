@@ -22,6 +22,8 @@
 		ACE7AED623A573C40012E2AC /* SpecialEffectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AED523A573C40012E2AC /* SpecialEffectsView.swift */; };
 		ACE7AED823A577690012E2AC /* BlurSaturationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AED723A577690012E2AC /* BlurSaturationView.swift */; };
 		ACE7AEDA23A578920012E2AC /* TrapezoidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AED923A578920012E2AC /* TrapezoidView.swift */; };
+		ACE7AEDC23A57AA20012E2AC /* CheckerboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AEDB23A57AA20012E2AC /* CheckerboardView.swift */; };
+		ACE7AEDE23A5AD840012E2AC /* SpirographView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AEDD23A5AD840012E2AC /* SpirographView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		ACE7AED523A573C40012E2AC /* SpecialEffectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialEffectsView.swift; sourceTree = "<group>"; };
 		ACE7AED723A577690012E2AC /* BlurSaturationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurSaturationView.swift; sourceTree = "<group>"; };
 		ACE7AED923A578920012E2AC /* TrapezoidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapezoidView.swift; sourceTree = "<group>"; };
+		ACE7AEDB23A57AA20012E2AC /* CheckerboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerboardView.swift; sourceTree = "<group>"; };
+		ACE7AEDD23A5AD840012E2AC /* SpirographView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirographView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				ACE7AE9123A262C10012E2AC /* AppDelegate.swift */,
 				ACE7AE9323A262C10012E2AC /* SceneDelegate.swift */,
 				ACE7AE9523A262C10012E2AC /* ContentView.swift */,
+				ACE7AEDB23A57AA20012E2AC /* CheckerboardView.swift */,
+				ACE7AEDD23A5AD840012E2AC /* SpirographView.swift */,
 				ACE7AEC923A3C41F0012E2AC /* FlowerView.swift */,
 				ACE7AEC723A3BE4C0012E2AC /* ArcView.swift */,
 				ACE7AECD23A3CDA50012E2AC /* ColorCyclingCircle.swift */,
@@ -180,7 +186,9 @@
 				ACE7AED023A3CF610012E2AC /* ColorCircleView.swift in Sources */,
 				ACE7AE9223A262C10012E2AC /* AppDelegate.swift in Sources */,
 				ACE7AE9423A262C10012E2AC /* SceneDelegate.swift in Sources */,
+				ACE7AEDE23A5AD840012E2AC /* SpirographView.swift in Sources */,
 				ACE7AECE23A3CDA50012E2AC /* ColorCyclingCircle.swift in Sources */,
+				ACE7AEDC23A57AA20012E2AC /* CheckerboardView.swift in Sources */,
 				ACE7AED623A573C40012E2AC /* SpecialEffectsView.swift in Sources */,
 				ACE7AECC23A3CA730012E2AC /* ImageFrameView.swift in Sources */,
 				ACE7AE9623A262C10012E2AC /* ContentView.swift in Sources */,
