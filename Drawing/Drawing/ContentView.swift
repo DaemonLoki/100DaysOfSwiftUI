@@ -14,23 +14,31 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    NavigationLink(destination: TriangleView()) {
-                        Text("Triangle")
-                            .font(.title)
+                    Group {
+                        NavigationLink(destination: ArrowView()) {
+                            Text("Arrow")
+                                .font(.title)
+                        }
+                        .padding()
+                        
+                        NavigationLink(destination: TriangleView()) {
+                            Text("Triangle")
+                                .font(.title)
+                        }
+                        .padding()
+                        
+                        NavigationLink(destination: ArcView()) {
+                            Text("Arc")
+                                .font(.title)
+                        }
+                        .padding()
+                        
+                        NavigationLink(destination: FlowerView()) {
+                            Text("Flower")
+                                .font(.title)
+                        }
+                        .padding()
                     }
-                    .padding()
-                    
-                    NavigationLink(destination: ArcView()) {
-                        Text("Arc")
-                            .font(.title)
-                    }
-                    .padding()
-                    
-                    NavigationLink(destination: FlowerView()) {
-                        Text("Flower")
-                            .font(.title)
-                    }
-                    .padding()
                     
                     NavigationLink(destination: ImageFrameView()) {
                         Text("Image Frame")

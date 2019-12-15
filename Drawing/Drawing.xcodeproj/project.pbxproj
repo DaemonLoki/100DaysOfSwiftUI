@@ -24,6 +24,7 @@
 		ACE7AEDA23A578920012E2AC /* TrapezoidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AED923A578920012E2AC /* TrapezoidView.swift */; };
 		ACE7AEDC23A57AA20012E2AC /* CheckerboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AEDB23A57AA20012E2AC /* CheckerboardView.swift */; };
 		ACE7AEDE23A5AD840012E2AC /* SpirographView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AEDD23A5AD840012E2AC /* SpirographView.swift */; };
+		ACE7AEE023A669790012E2AC /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AEDF23A669790012E2AC /* ArrowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		ACE7AED923A578920012E2AC /* TrapezoidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapezoidView.swift; sourceTree = "<group>"; };
 		ACE7AEDB23A57AA20012E2AC /* CheckerboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerboardView.swift; sourceTree = "<group>"; };
 		ACE7AEDD23A5AD840012E2AC /* SpirographView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirographView.swift; sourceTree = "<group>"; };
+		ACE7AEDF23A669790012E2AC /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				ACE7AE9123A262C10012E2AC /* AppDelegate.swift */,
 				ACE7AE9323A262C10012E2AC /* SceneDelegate.swift */,
 				ACE7AE9523A262C10012E2AC /* ContentView.swift */,
+				ACE7AEDF23A669790012E2AC /* ArrowView.swift */,
 				ACE7AEDB23A57AA20012E2AC /* CheckerboardView.swift */,
 				ACE7AEDD23A5AD840012E2AC /* SpirographView.swift */,
 				ACE7AEC923A3C41F0012E2AC /* FlowerView.swift */,
@@ -181,6 +184,7 @@
 			files = (
 				ACE7AEC623A3BD7C0012E2AC /* TriangleView.swift in Sources */,
 				ACE7AECA23A3C41F0012E2AC /* FlowerView.swift in Sources */,
+				ACE7AEE023A669790012E2AC /* ArrowView.swift in Sources */,
 				ACE7AEC823A3BE4C0012E2AC /* ArcView.swift in Sources */,
 				ACE7AEDA23A578920012E2AC /* TrapezoidView.swift in Sources */,
 				ACE7AED023A3CF610012E2AC /* ColorCircleView.swift in Sources */,
