@@ -40,47 +40,55 @@ struct ContentView: View {
                         .padding()
                     }
                     
-                    NavigationLink(destination: ImageFrameView()) {
-                        Text("Image Frame")
-                            .font(.title)
+                    Group {
+                        NavigationLink(destination: ImageFrameView()) {
+                            Text("Image Frame")
+                                .font(.title)
+                        }
+                        .padding()
+                        
+                        NavigationLink(destination: ColorRectView()) {
+                            Text("Color Rectangle")
+                                .font(.title)
+                        }
+                        .padding()
+                        
+                        NavigationLink(destination: ColorCircleView()) {
+                            Text("Color Circle")
+                                .font(.title)
+                        }
+                        .padding()
+                        
+                        NavigationLink(destination: SpecialEffectsView()) {
+                            Text("Special Effects")
+                                .font(.title)
+                        }
+                        .padding()
+                        
+                        NavigationLink(destination: BlurSaturationView()) {
+                            Text("Blur / Saturation")
+                                .font(.title)
+                        }
+                        .padding()
+                        
+                        NavigationLink(destination: TrapezoidView()) {
+                            Text("Trapezoid")
+                                .font(.title)
+                        }
+                        .padding()
+                        
+                        NavigationLink(destination: CheckerboardView()) {
+                            Text("Checkerboard")
+                                .font(.title)
+                        }
+                        .padding()
+                        
+                        NavigationLink(destination: SpirographView()) {
+                            Text("Spirograph")
+                                .font(.title)
+                        }
+                        .padding()
                     }
-                    .padding()
-                    
-                    NavigationLink(destination: ColorCircleView()) {
-                        Text("Color Circle")
-                            .font(.title)
-                    }
-                    .padding()
-                    
-                    NavigationLink(destination: SpecialEffectsView()) {
-                        Text("Special Effects")
-                            .font(.title)
-                    }
-                    .padding()
-                    
-                    NavigationLink(destination: BlurSaturationView()) {
-                        Text("Blur / Saturation")
-                            .font(.title)
-                    }
-                    .padding()
-                    
-                    NavigationLink(destination: TrapezoidView()) {
-                        Text("Trapezoid")
-                            .font(.title)
-                    }
-                    .padding()
-                    
-                    NavigationLink(destination: CheckerboardView()) {
-                        Text("Checkerboard")
-                            .font(.title)
-                    }
-                    .padding()
-                    
-                    NavigationLink(destination: SpirographView()) {
-                        Text("Spirograph")
-                            .font(.title)
-                    }
-                    .padding()
                 }
             }
             .navigationBarTitle("Drawing")

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC23AF1323A7821D00632C10 /* ColorCyclingRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23AF1223A7821D00632C10 /* ColorCyclingRectangle.swift */; };
+		AC23AF1523A783A300632C10 /* ColorRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23AF1423A783A300632C10 /* ColorRectView.swift */; };
 		ACE7AE9223A262C10012E2AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AE9123A262C10012E2AC /* AppDelegate.swift */; };
 		ACE7AE9423A262C10012E2AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AE9323A262C10012E2AC /* SceneDelegate.swift */; };
 		ACE7AE9623A262C10012E2AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7AE9523A262C10012E2AC /* ContentView.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC23AF1223A7821D00632C10 /* ColorCyclingRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingRectangle.swift; sourceTree = "<group>"; };
+		AC23AF1423A783A300632C10 /* ColorRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRectView.swift; sourceTree = "<group>"; };
 		ACE7AE8E23A262C10012E2AC /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE7AE9123A262C10012E2AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE7AE9323A262C10012E2AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,10 +93,12 @@
 				ACE7AEC923A3C41F0012E2AC /* FlowerView.swift */,
 				ACE7AEC723A3BE4C0012E2AC /* ArcView.swift */,
 				ACE7AECD23A3CDA50012E2AC /* ColorCyclingCircle.swift */,
+				AC23AF1223A7821D00632C10 /* ColorCyclingRectangle.swift */,
 				ACE7AED523A573C40012E2AC /* SpecialEffectsView.swift */,
 				ACE7AED723A577690012E2AC /* BlurSaturationView.swift */,
 				ACE7AED923A578920012E2AC /* TrapezoidView.swift */,
 				ACE7AECF23A3CF610012E2AC /* ColorCircleView.swift */,
+				AC23AF1423A783A300632C10 /* ColorRectView.swift */,
 				ACE7AEC523A3BD7C0012E2AC /* TriangleView.swift */,
 				ACE7AE9723A262C60012E2AC /* Assets.xcassets */,
 				ACE7AECB23A3CA730012E2AC /* ImageFrameView.swift */,
@@ -185,6 +191,7 @@
 				ACE7AEC623A3BD7C0012E2AC /* TriangleView.swift in Sources */,
 				ACE7AECA23A3C41F0012E2AC /* FlowerView.swift in Sources */,
 				ACE7AEE023A669790012E2AC /* ArrowView.swift in Sources */,
+				AC23AF1323A7821D00632C10 /* ColorCyclingRectangle.swift in Sources */,
 				ACE7AEC823A3BE4C0012E2AC /* ArcView.swift in Sources */,
 				ACE7AEDA23A578920012E2AC /* TrapezoidView.swift in Sources */,
 				ACE7AED023A3CF610012E2AC /* ColorCircleView.swift in Sources */,
@@ -197,6 +204,7 @@
 				ACE7AECC23A3CA730012E2AC /* ImageFrameView.swift in Sources */,
 				ACE7AE9623A262C10012E2AC /* ContentView.swift in Sources */,
 				ACE7AED823A577690012E2AC /* BlurSaturationView.swift in Sources */,
+				AC23AF1523A783A300632C10 /* ColorRectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
