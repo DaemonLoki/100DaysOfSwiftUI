@@ -23,9 +23,17 @@ struct Arrow: Shape {
 }
 
 struct ArrowView: View {
+    
+    @State private var widthOfLine: CGFloat = 2
     var body: some View {
-        Arrow()
-            .frame(width: 300, height: 300)
+        VStack(spacing: 20) {
+            Arrow()
+                .stroke(Color.red, style: StrokeStyle(lineWidth: widthOfLine, lineCap: .round, lineJoin: .round))
+                .frame(width: 300, height: 300)
+            
+            Slider(value: $widthOfLine, in: 0...20, step: 0.5)
+                .padding()
+        }
     }
 }
 
