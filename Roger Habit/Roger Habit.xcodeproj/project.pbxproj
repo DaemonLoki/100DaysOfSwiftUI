@@ -15,6 +15,9 @@
 		AC818DDC23A841A900FEE2C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC818DDA23A841A900FEE2C9 /* LaunchScreen.storyboard */; };
 		AC818DE423A841BB00FEE2C9 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC818DE323A841BB00FEE2C9 /* Habit.swift */; };
 		AC818DE623AA4DE900FEE2C9 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC818DE523AA4DE900FEE2C9 /* AddHabitView.swift */; };
+		AC818DE823AA573900FEE2C9 /* CardBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC818DE723AA573900FEE2C9 /* CardBackgroundView.swift */; };
+		AC818DEA23AAC44000FEE2C9 /* Habits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC818DE923AAC44000FEE2C9 /* Habits.swift */; };
+		AC818DEC23AB916800FEE2C9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC818DEB23AB916800FEE2C9 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		AC818DDD23A841A900FEE2C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC818DE323A841BB00FEE2C9 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		AC818DE523AA4DE900FEE2C9 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
+		AC818DE723AA573900FEE2C9 /* CardBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackgroundView.swift; sourceTree = "<group>"; };
+		AC818DE923AAC44000FEE2C9 /* Habits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habits.swift; sourceTree = "<group>"; };
+		AC818DEB23AB916800FEE2C9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +69,11 @@
 				AC818DCF23A841A700FEE2C9 /* AppDelegate.swift */,
 				AC818DD123A841A700FEE2C9 /* SceneDelegate.swift */,
 				AC818DD323A841A700FEE2C9 /* ContentView.swift */,
+				AC818DEB23AB916800FEE2C9 /* DetailView.swift */,
+				AC818DE723AA573900FEE2C9 /* CardBackgroundView.swift */,
 				AC818DE523AA4DE900FEE2C9 /* AddHabitView.swift */,
 				AC818DE323A841BB00FEE2C9 /* Habit.swift */,
+				AC818DE923AAC44000FEE2C9 /* Habits.swift */,
 				AC818DD523A841A900FEE2C9 /* Assets.xcassets */,
 				AC818DDA23A841A900FEE2C9 /* LaunchScreen.storyboard */,
 				AC818DDD23A841A900FEE2C9 /* Info.plist */,
@@ -153,10 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC818DD023A841A700FEE2C9 /* AppDelegate.swift in Sources */,
+				AC818DEC23AB916800FEE2C9 /* DetailView.swift in Sources */,
 				AC818DD223A841A700FEE2C9 /* SceneDelegate.swift in Sources */,
 				AC818DE423A841BB00FEE2C9 /* Habit.swift in Sources */,
 				AC818DD423A841A700FEE2C9 /* ContentView.swift in Sources */,
+				AC818DE823AA573900FEE2C9 /* CardBackgroundView.swift in Sources */,
 				AC818DE623AA4DE900FEE2C9 /* AddHabitView.swift in Sources */,
+				AC818DEA23AAC44000FEE2C9 /* Habits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

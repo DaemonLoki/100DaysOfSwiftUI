@@ -10,24 +10,57 @@ import SwiftUI
 
 struct ContentView: View {
     
-    // TODO load data from UserDefaults
-    @State private var habits = [Habit]()
+    @ObservedObject var habits = Habits()
     @State private var showingSheet = false
+    
+    let rowHeight: CGFloat = 150
+    let verticalPaddingSize: CGFloat = 10
+    
+    init() {
+        UITableView.appearance().separatorStyle = .none
+    }
     
     var body: some View {
         NavigationView {
-            List(habits) { habit in
-                Text(habit.name)
+            List {
+                ForEach(0..<self.habits.items.count) { number in
+                    GeometryReader { geo in
+                        VStack {
+                            NavigationLink(destination: DetailView(habits: self.habits, habitIndex: number)) {
+                                EmptyView()
+                            }
+                            .layoutPriority(0)
+                            
+                            ZStack {
+                                CardBackgroundView(width: geo.size.width, height: self.calculateElementHeight(withFactor: 2))
+                            
+                                Text(self.habits.items[number].name)
+                            }
+                            .layoutPriority(1)
+                        }
+                        .frame(width: geo.size.width, height: self.calculateElementHeight(withFactor: 3))
+                        //.cornerRadius(10)
+                        .clipped()
+                        .padding(.vertical, self.verticalPaddingSize)
+                        .padding(.horizontal)
+                    }
+                }
             }
-        .navigationBarTitle("Roger Habit")
-        .navigationBarItems(trailing:
-            Button("Add") {
-                self.showingSheet = true
-            })
+            .environment(\.defaultMinListRowHeight, self.rowHeight)
+            .navigationBarTitle("Roger Habit")
+            .navigationBarItems(trailing:
+                Button("Add") {
+                    self.showingSheet = true
+                }
+            )
             .sheet(isPresented: $showingSheet) {
-                AddHabitView(habits: self.$habits)
+                AddHabitView(habits: self.habits)
             }
         }
+    }
+    
+    func calculateElementHeight(withFactor factor: Int) -> CGFloat {
+        return self.rowHeight - (CGFloat(factor) * self.verticalPaddingSize)
     }
 }
 

@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct Habit: Codable, Identifiable {
+struct Habit: Codable, Identifiable, Hashable {
     let id = UUID()
     let name: String
-    let amount: Int
+    let type: String
+    var amount: Int
 }
