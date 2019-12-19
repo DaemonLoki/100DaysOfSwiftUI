@@ -22,28 +22,26 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(0..<self.habits.items.count) { number in
-                    GeometryReader { geo in
-                        VStack {
-                            NavigationLink(destination: DetailView(habits: self.habits, habitIndex: number)) {
-                                EmptyView()
-                            }
-                            .layoutPriority(0)
-                            
-                            ZStack {
-                                CardBackgroundView(width: geo.size.width, height: self.calculateElementHeight(withFactor: 2))
-                            
-                                Text(self.habits.items[number].name)
-                            }
-                            .layoutPriority(1)
+            List(habits.items) { habit in
+                GeometryReader { geo in
+                    VStack {
+                        NavigationLink(destination: DetailView(habits: self.habits, habit: habit)) {
+                            EmptyView()
                         }
-                        .frame(width: geo.size.width, height: self.calculateElementHeight(withFactor: 3))
-                        //.cornerRadius(10)
-                        .clipped()
-                        .padding(.vertical, self.verticalPaddingSize)
-                        .padding(.horizontal)
+                        .layoutPriority(0)
+                        
+                        ZStack {
+                            CardBackgroundView(width: geo.size.width, height: self.calculateElementHeight(withFactor: 2))
+                        
+                            Text(habit.name)
+                        }
+                        .layoutPriority(1)
                     }
+                    .frame(width: geo.size.width, height: self.calculateElementHeight(withFactor: 3))
+                    //.cornerRadius(10)
+                    .clipped()
+                    .padding(.vertical, self.verticalPaddingSize)
+                    .padding(.horizontal)
                 }
             }
             .environment(\.defaultMinListRowHeight, self.rowHeight)

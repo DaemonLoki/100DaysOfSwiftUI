@@ -11,7 +11,15 @@ import SwiftUI
 struct DetailView: View {
     
     @ObservedObject var habits: Habits
+    let habit: Habit
     let habitIndex: Int
+    
+    init(habits: Habits, habit: Habit) {
+        self.habits = habits
+        self.habit = habit
+        self.habitIndex = habits.items.firstIndex(of: habit) ?? 0
+    }
+        
     
     var body: some View {
         GeometryReader { geo in
