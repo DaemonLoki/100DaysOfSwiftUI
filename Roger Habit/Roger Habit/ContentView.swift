@@ -31,14 +31,15 @@ struct ContentView: View {
                         .layoutPriority(0)
                         
                         ZStack {
-                            CardBackgroundView(width: geo.size.width, height: self.calculateElementHeight(withFactor: 2))
+                            CardBackgroundView(width: geo.size.width, height: self.rowHeight - (2 * self.verticalPaddingSize))
                         
                             Text(habit.name)
+                                .font(.headline)
+                                .foregroundColor(.white)
                         }
                         .layoutPriority(1)
                     }
-                    .frame(width: geo.size.width, height: self.calculateElementHeight(withFactor: 3))
-                    //.cornerRadius(10)
+                    .frame(width: geo.size.width, height: self.rowHeight)
                     .clipped()
                     .padding(.vertical, self.verticalPaddingSize)
                     .padding(.horizontal)
@@ -55,10 +56,6 @@ struct ContentView: View {
                 AddHabitView(habits: self.habits)
             }
         }
-    }
-    
-    func calculateElementHeight(withFactor factor: Int) -> CGFloat {
-        return self.rowHeight - (CGFloat(factor) * self.verticalPaddingSize)
     }
 }
 
