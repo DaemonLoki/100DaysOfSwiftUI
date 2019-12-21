@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct Arrow: Shape {
+    
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
@@ -25,14 +26,29 @@ struct Arrow: Shape {
 struct ArrowView: View {
     
     @State private var widthOfLine: CGFloat = 2
+    @State private var scaleAmount: CGFloat = 1
+    @State private var rotationAngle: Double = 0
+    @State private var strokeColor: Color = .red
+    
     var body: some View {
         VStack(spacing: 20) {
             Arrow()
-                .stroke(Color.red, style: StrokeStyle(lineWidth: widthOfLine, lineCap: .round, lineJoin: .round))
+                .stroke(strokeColor, style: StrokeStyle(lineWidth: widthOfLine, lineCap: .round, lineJoin: .round))
+                .transformEffect(CGAffineTransform(scaleX: scaleAmount, y: scaleAmount))
+                .rotation3DEffect(.degrees(rotationAngle), axis: (x: 0, y: 0, z: 1))
                 .frame(width: 300, height: 300)
             
             Slider(value: $widthOfLine, in: 0...20, step: 0.5)
                 .padding()
+        }
+        .onAppear {
+            withAnimation(Animation.easeInOut(duration: 2).repeatForever()) {
+                self.scaleAmount = 0.6
+                self.rotationAngle = 720
+                self.widthOfLine = 20
+                self.strokeColor = .green
+            }
+            
         }
     }
 }
