@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AC61095F23D85CA70073A198 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61095E23D85CA70073A198 /* Order.swift */; };
 		AC61096123D860900073A198 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61096023D860900073A198 /* AddressView.swift */; };
+		AC61096323D861650073A198 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61096223D861650073A198 /* CheckoutView.swift */; };
 		AC72120123B630CA005825B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72120023B630CA005825B6 /* AppDelegate.swift */; };
 		AC72120323B630CA005825B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72120223B630CA005825B6 /* SceneDelegate.swift */; };
 		AC72120523B630CA005825B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72120423B630CA005825B6 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		AC61095E23D85CA70073A198 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		AC61096023D860900073A198 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		AC61096223D861650073A198 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		AC7211FD23B630CA005825B6 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC72120023B630CA005825B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC72120223B630CA005825B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				AC72120423B630CA005825B6 /* ContentView.swift */,
 				AC61095E23D85CA70073A198 /* Order.swift */,
 				AC61096023D860900073A198 /* AddressView.swift */,
+				AC61096223D861650073A198 /* CheckoutView.swift */,
 				AC72120623B630CD005825B6 /* Assets.xcassets */,
 				AC72120B23B630CD005825B6 /* LaunchScreen.storyboard */,
 				AC72120E23B630CD005825B6 /* Info.plist */,
@@ -154,6 +157,7 @@
 			files = (
 				AC72120123B630CA005825B6 /* AppDelegate.swift in Sources */,
 				AC72120323B630CA005825B6 /* SceneDelegate.swift in Sources */,
+				AC61096323D861650073A198 /* CheckoutView.swift in Sources */,
 				AC61095F23D85CA70073A198 /* Order.swift in Sources */,
 				AC72120523B630CA005825B6 /* ContentView.swift in Sources */,
 				AC61096123D860900073A198 /* AddressView.swift in Sources */,
