@@ -10,44 +10,54 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var order = Order()
+    @ObservedObject var order = Orders()
     
     var body: some View {
         NavigationView {
-            Form {
-                Section {
-                    Picker("Select your cake type", selection: $order.type) {
-                        ForEach(0..<Order.types.count, id: \.self) {
-                            Text(Order.types[$0])
-                        }
-                    }
-                    
-                    Stepper(value: $order.quantity, in: 3...20) {
-                        Text("Number of cakes: \(order.quantity)")
-                    }
-                }
-                
-                Section {
-                    Toggle(isOn: $order.specialRequestEnabled.animation()) {
-                        Text("Any special requests?")
-                    }
-                    
-                    if order.specialRequestEnabled {
-                        Toggle(isOn: $order.extraFrosting) {
-                            Text("Add extra frosting")
+            VStack {
+                Form {
+                    Section {
+                        Picker("Select your cake type", selection: $order.order.type) {
+                            ForEach(0..<Order.types.count, id: \.self) {
+                                Text(Order.types[$0])
+                            }
                         }
                         
-                        Toggle(isOn: $order.addSprinkles) {
-                            Text("Add extra sprinkles")
+                        Stepper(value: $order.order.quantity, in: 3...20) {
+                            Text("Number of cakes: \(order.order.quantity)")
+                        }
+                    }
+                    
+                    Section {
+                        Toggle(isOn: $order.order.specialRequestEnabled.animation()) {
+                            Text("Any special requests?")
+                        }
+                        
+                        if order.order.specialRequestEnabled {
+                            Toggle(isOn: $order.order.extraFrosting) {
+                                Text("Add extra frosting")
+                            }
+                            
+                            Toggle(isOn: $order.order.addSprinkles) {
+                                Text("Add extra sprinkles")
+                            }
+                        }
+                    }
+                    
+                    Section {
+                        NavigationLink(destination: AddressView(order: order)) {
+                            Text("Delivery details")
                         }
                     }
                 }
                 
-                Section {
-                    NavigationLink(destination: AddressView(order: order)) {
-                        Text("Delivery details")
-                    }
-                }
+                Image("cupcake_top")
+                    .colorMultiply(.yellow)
+                    .offset(x: 0, y: 50)
+                
+                Image("cupcake_bottom")
+                
+                Spacer()
             }
         .navigationBarTitle("Cupcake Corner")
         }
