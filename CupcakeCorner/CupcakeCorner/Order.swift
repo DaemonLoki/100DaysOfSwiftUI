@@ -33,7 +33,7 @@ class Order: ObservableObject, Codable {
     @Published var zip = ""
     
     var hasValidAddress: Bool {
-        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+        if name.isOnlyWhitespace || streetAddress.isOnlyWhitespace || city.isOnlyWhitespace || zip.isOnlyWhitespace {
             return false
         }
         return true

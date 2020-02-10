@@ -16,6 +16,7 @@
 		AC72120723B630CD005825B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC72120623B630CD005825B6 /* Assets.xcassets */; };
 		AC72120A23B630CD005825B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC72120923B630CD005825B6 /* Preview Assets.xcassets */; };
 		AC72120D23B630CD005825B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC72120B23B630CD005825B6 /* LaunchScreen.storyboard */; };
+		ACC2DB7723F1FED6004126F6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2DB7623F1FED6004126F6 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AC72120923B630CD005825B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC72120C23B630CD005825B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC72120E23B630CD005825B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACC2DB7623F1FED6004126F6 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				AC72120223B630CA005825B6 /* SceneDelegate.swift */,
 				AC72120423B630CA005825B6 /* ContentView.swift */,
 				AC61095E23D85CA70073A198 /* Order.swift */,
+				ACC2DB7623F1FED6004126F6 /* String+Extensions.swift */,
 				AC61096023D860900073A198 /* AddressView.swift */,
 				AC61096223D861650073A198 /* CheckoutView.swift */,
 				AC72120623B630CD005825B6 /* Assets.xcassets */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC72120123B630CA005825B6 /* AppDelegate.swift in Sources */,
+				ACC2DB7723F1FED6004126F6 /* String+Extensions.swift in Sources */,
 				AC72120323B630CA005825B6 /* SceneDelegate.swift in Sources */,
 				AC61096323D861650073A198 /* CheckoutView.swift in Sources */,
 				AC61095F23D85CA70073A198 /* Order.swift in Sources */,
