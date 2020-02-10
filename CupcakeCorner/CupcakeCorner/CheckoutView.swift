@@ -14,6 +14,9 @@ struct CheckoutView: View {
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
     
+    @State private var errorMessage = ""
+    @State private var showingError = false
+    
     var body: some View {
         GeometryReader { geo in
             ScrollView {
@@ -37,11 +40,15 @@ struct CheckoutView: View {
         .alert(isPresented: $showingConfirmation) {
             Alert(title: Text("Thank you!"), message: Text(confirmationMessage), dismissButton: .default(Text("OK")))
         }
+        .alert(isPresented: $showingError) {
+            Alert(title: Text("We are very sorry!"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+        }
     }
     
     func placeOrder() {
         guard let encoded = try? JSONEncoder().encode(order) else {
-            print("Failed to encode order")
+            errorMessage = "Failed to encode order"
+            showingError = true
             return
         }
         
@@ -54,7 +61,8 @@ struct CheckoutView: View {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
-                print("No data in response: \(error?.localizedDescription ?? "Unknown error").")
+                self.errorMessage = "No data in response: \(error?.localizedDescription ?? "Unknown error")."
+                self.showingError = true
                 return
             }
             
@@ -62,7 +70,8 @@ struct CheckoutView: View {
                 self.confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
                 self.showingConfirmation = true
             } else {
-                print("Invalid response from server")
+                self.errorMessage = "Invalid response from server"
+                self.showingError = true
             }
         }.resume()
     }
