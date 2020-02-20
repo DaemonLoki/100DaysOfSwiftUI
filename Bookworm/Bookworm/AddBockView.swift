@@ -19,6 +19,13 @@ struct AddBockView: View {
     @State private var genre = ""
     @State private var review = ""
     
+    var isValidInput: Bool {
+        if title.isEmpty || author.isEmpty || genre.isEmpty || review.isEmpty {
+            return false
+        }
+        return true
+    }
+    
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     
     var body: some View {
@@ -53,7 +60,7 @@ struct AddBockView: View {
                         try? self.moc.save()
                         self.presentationMode.wrappedValue.dismiss()
                     }
-                }
+                }.disabled(isValidInput == false)
             }
         .navigationBarTitle("Add Book")
         }
