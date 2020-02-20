@@ -35,9 +35,10 @@ struct ContentView: View {
                         }
                     }
                 }
+                .onDelete(perform: deleteBooks)
             }
             .navigationBarTitle("Bookworm")
-            .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(leading: EditButton(), trailing: Button(action: {
                 self.showingAddScreen.toggle()
             }) {
                 Image(systemName: "plus")
@@ -46,6 +47,19 @@ struct ContentView: View {
                 AddBockView().environment(\.managedObjectContext, self.moc)
             }
         }
+    }
+    
+    func deleteBooks(at offsets: IndexSet) {
+        for offset in offsets {
+            // find book in fetch request
+            let book = books[offset]
+            
+            // delete it from the context
+            moc.delete(book)
+        }
+        
+        // save context
+        try? moc.save()
     }
 }
 
