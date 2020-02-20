@@ -20,7 +20,7 @@ struct AddBockView: View {
     @State private var review = ""
     
     var isValidInput: Bool {
-        if title.isEmpty || author.isEmpty || genre.isEmpty || review.isEmpty {
+        if title.isEmpty || author.isEmpty || genre.isEmpty || review.isEmpty {
             return false
         }
         return true
@@ -56,6 +56,7 @@ struct AddBockView: View {
                         newBook.rating = Int16(self.rating)
                         newBook.genre = self.genre
                         newBook.review = self.review
+                        newBook.date = Date()
                         
                         try? self.moc.save()
                         self.presentationMode.wrappedValue.dismiss()

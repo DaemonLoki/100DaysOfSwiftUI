@@ -18,7 +18,11 @@ struct DetailView: View {
     let book: Book
     
     var body: some View {
-        GeometryReader { geometry in
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        
+        return GeometryReader { geometry in
             VStack {
                 ZStack(alignment: .bottomTrailing) {
                     Image(self.book.genre ?? "Fantasy")
@@ -40,6 +44,10 @@ struct DetailView: View {
                 
                 Text(self.book.review ?? "No review")
                 .padding()
+                
+                Text(self.book.date != nil ? dateFormatter.string(from: self.book.date!) : "")
+                    .font(.caption)
+                    .padding(.bottom)
                 
                 RatingView(rating: .constant(Int(self.book.rating)))
                     .font(.largeTitle)
