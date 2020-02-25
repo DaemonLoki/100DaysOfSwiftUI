@@ -20,7 +20,7 @@ struct AddBockView: View {
     @State private var review = ""
     
     var isValidInput: Bool {
-        if title.isEmpty || author.isEmpty || genre.isEmpty || review.isEmpty {
+        if title.isEmpty || author.isEmpty || genre.isEmpty || review.isEmpty {
             return false
         }
         return true
