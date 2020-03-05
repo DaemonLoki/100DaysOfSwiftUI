@@ -9,14 +9,15 @@
 import SwiftUI
 import CoreData
 
+
 struct FilteredList<T: NSManagedObject, Content: View>: View {
     
     var fetchRequest: FetchRequest<T>
     var items: FetchedResults<T> { fetchRequest.wrappedValue }
     let content: (T) -> Content
     
-    init(filterKey: String, filterValue: String, sortDescriptors: [NSSortDescriptor] = [], @ViewBuilder content: @escaping (T) -> Content) {
-        fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: sortDescriptors, predicate: NSPredicate(format: "%K BEGINSWITH %@", filterKey, filterValue))
+    init(filterKey: String, filterValue: String, sortDescriptors: [NSSortDescriptor] = [], predicate: String = "BEGINSWITH", @ViewBuilder content: @escaping (T) -> Content) {
+        fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: sortDescriptors, predicate: NSPredicate(format: "%K \(predicate) %@", filterKey, filterValue))
         self.content = content
     }
     
