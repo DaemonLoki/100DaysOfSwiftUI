@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct UserView: View {
-    let user: User
-    @Binding var users: [User]
+    let user: ModelUser
+    @Binding var users: [ModelUser]
     
     @State private var ageXOffset: CGFloat = 0
     @State private var ageYOffset: CGFloat = 0
@@ -32,13 +32,13 @@ struct UserView: View {
                     
                     ZStack {
                         
-                        UserInfoRowView(imageName: "envelope", text: self.offsetToggle ? "" :  self.user.email, color: .red, maxWidth: self.cardsMaxWidth)
+                        UserInfoRowView(imageName: "envelope", text: self.offsetToggle ? "" :  self.user.wrappedMail, color: .red, maxWidth: self.cardsMaxWidth)
                             .offset(x: self.mailXOffset, y: self.mailYOffset)
                         
-                        UserInfoRowView(imageName: "house", text: self.offsetToggle ? "" : self.user.address, color: .green, maxWidth: self.cardsMaxWidth)
+                        UserInfoRowView(imageName: "house", text: self.offsetToggle ? "" : self.user.wrappedAddress, color: .green, maxWidth: self.cardsMaxWidth)
                             .offset(x: self.addressXOffset, y: self.addressYOffset)
                         
-                        UserInfoRowView(imageName: "timer", text: "\(self.user.age) years old.", color: .yellow, maxWidth: self.cardsMaxWidth)
+                        UserInfoRowView(imageName: "timer", text: "\(self.user.wrappedAge) years old.", color: .yellow, maxWidth: self.cardsMaxWidth)
                             .offset(x: self.ageXOffset, y: self.ageYOffset)
                         
                     }
@@ -57,7 +57,7 @@ struct UserView: View {
                         .padding(.top, 40)
                         .padding(.horizontal, 20)
                     
-                    Text(self.user.about)
+                    Text(self.user.wrappedAbout)
                         .font(.body)
                         .padding()
                     
@@ -68,8 +68,8 @@ struct UserView: View {
                     
                     ScrollView(.horizontal) {
                         HStack(spacing: 20) {
-                            ForEach(0..<self.user.friends.count) { index in
-                                NavigationLink(destination: UserView(user: self.users.first(where: { $0.id == self.user.friends[index].id })!, users: self.$users)) {
+                            ForEach(0..<self.user.wrappedFriends.count) { index in
+                                NavigationLink(destination: UserView(user: self.users.first(where: { $0.wrappedId == self.user.wrappedFriends[index].wrappedId })!, users: self.$users)) {
                                     VStack {
                                         Image(systemName: "person")
                                             .resizable()
@@ -79,7 +79,7 @@ struct UserView: View {
                                             .frame(width: 50, height: 50)
                                         
                                         
-                                        Text(self.user.friends[index].name)
+                                        Text(self.user.wrappedFriends[index].wrappedName)
                                             .foregroundColor(.primary)
                                         
                                     }
@@ -101,7 +101,7 @@ struct UserView: View {
                     
                 }
             }
-        }.navigationBarTitle(user.name)
+        }.navigationBarTitle(user.wrappedName)
         
     }
     
@@ -148,6 +148,7 @@ struct UserView: View {
     }
 }
 
+/*
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
         UserView(user: User(id: "testId", name: "Stefan Blos", age: 29, company: "Codecamp:N", email: "stefan.blos@gmail.com", address: "Stettiner Straße 18, 91320 Ebermannstadt", about: "He is an aspiring iOS developer who takes 8 hours on average to record a 3 minute YouTube clip.", friends: [Friend(id: "friendId1", name: "Batman"),
@@ -158,3 +159,4 @@ struct UserView_Previews: PreviewProvider {
                                                                                                                                                                                                                                                                                                          Friend(id: "friendId6", name: "Morpheus")]), users: Binding.constant([]))
     }
 }
+*/

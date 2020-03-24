@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AC7AF7D12420393B009F36C4 /* UserInfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7AF7D02420393B009F36C4 /* UserInfoRowView.swift */; };
+		AC7AF7D6242A9708009F36C4 /* ModelUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7AF7D2242A9708009F36C4 /* ModelUser+CoreDataClass.swift */; };
+		AC7AF7D7242A9708009F36C4 /* ModelUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7AF7D3242A9708009F36C4 /* ModelUser+CoreDataProperties.swift */; };
+		AC7AF7D8242A9708009F36C4 /* ModelFriend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7AF7D4242A9708009F36C4 /* ModelFriend+CoreDataClass.swift */; };
+		AC7AF7D9242A9708009F36C4 /* ModelFriend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7AF7D5242A9708009F36C4 /* ModelFriend+CoreDataProperties.swift */; };
 		ACA093EA24183FED004DCCA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA093E924183FED004DCCA7 /* AppDelegate.swift */; };
 		ACA093EC24183FED004DCCA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA093EB24183FED004DCCA7 /* SceneDelegate.swift */; };
 		ACA093EF24183FED004DCCA7 /* FriendFace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACA093ED24183FED004DCCA7 /* FriendFace.xcdatamodeld */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		AC7AF7D02420393B009F36C4 /* UserInfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRowView.swift; sourceTree = "<group>"; };
+		AC7AF7D2242A9708009F36C4 /* ModelUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelUser+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		AC7AF7D3242A9708009F36C4 /* ModelUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelUser+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		AC7AF7D4242A9708009F36C4 /* ModelFriend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelFriend+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		AC7AF7D5242A9708009F36C4 /* ModelFriend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelFriend+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ACA093E624183FED004DCCA7 /* FriendFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA093E924183FED004DCCA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACA093EB24183FED004DCCA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +74,10 @@
 		ACA093E824183FED004DCCA7 /* FriendFace */ = {
 			isa = PBXGroup;
 			children = (
+				AC7AF7D2242A9708009F36C4 /* ModelUser+CoreDataClass.swift */,
+				AC7AF7D3242A9708009F36C4 /* ModelUser+CoreDataProperties.swift */,
+				AC7AF7D4242A9708009F36C4 /* ModelFriend+CoreDataClass.swift */,
+				AC7AF7D5242A9708009F36C4 /* ModelFriend+CoreDataProperties.swift */,
 				ACA093E924183FED004DCCA7 /* AppDelegate.swift */,
 				ACA093EB24183FED004DCCA7 /* SceneDelegate.swift */,
 				ACA093F024183FED004DCCA7 /* ContentView.swift */,
@@ -162,10 +174,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACA093EF24183FED004DCCA7 /* FriendFace.xcdatamodeld in Sources */,
+				AC7AF7D6242A9708009F36C4 /* ModelUser+CoreDataClass.swift in Sources */,
 				ACA093EA24183FED004DCCA7 /* AppDelegate.swift in Sources */,
 				ACA093F124183FED004DCCA7 /* ContentView.swift in Sources */,
+				AC7AF7D8242A9708009F36C4 /* ModelFriend+CoreDataClass.swift in Sources */,
 				ACA0940324184088004DCCA7 /* Friend.swift in Sources */,
 				ACA094012418401C004DCCA7 /* User.swift in Sources */,
+				AC7AF7D9242A9708009F36C4 /* ModelFriend+CoreDataProperties.swift in Sources */,
+				AC7AF7D7242A9708009F36C4 /* ModelUser+CoreDataProperties.swift in Sources */,
 				ACA093EC24183FED004DCCA7 /* SceneDelegate.swift in Sources */,
 				AC7AF7D12420393B009F36C4 /* UserInfoRowView.swift in Sources */,
 				ACA09405241842BF004DCCA7 /* UserView.swift in Sources */,
