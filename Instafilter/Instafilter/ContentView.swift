@@ -20,6 +20,8 @@ struct ContentView: View {
     @State private var processedImage: UIImage?
     
     @State private var showingFilterSheet = false
+    @State private var showingError = false
+    @State private var errorMessage = ""
     
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
     let context = CIContext()
@@ -70,7 +72,11 @@ struct ContentView: View {
                     Spacer()
                     
                     Button("Save") {
-                        guard let processedImage = self.processedImage else { return }
+                        guard let processedImage = self.processedImage else {
+                            self.showingError = true
+                            self.errorMessage = "Please select an image first by touching the grey area."
+                            return
+                        }
                         
                         let imageSaver = ImageSaver()
                         
@@ -79,7 +85,8 @@ struct ContentView: View {
                         }
                         
                         imageSaver.errorHandler = {
-                            print("Oops: \($0.localizedDescription)")
+                            self.errorMessage = $0.localizedDescription
+                            self.showingError = true
                         }
                         
                         imageSaver.writeToPhotoAlbum(image: processedImage)
@@ -101,6 +108,9 @@ struct ContentView: View {
                     .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
                     .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) },
                 ])
+            }
+            .alert(isPresented: $showingError) { () -> Alert in
+                Alert(title: Text("Error"), message: Text(errorMessage))
             }
         }
     }
