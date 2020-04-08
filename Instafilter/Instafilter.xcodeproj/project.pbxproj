@@ -13,6 +13,7 @@
 		ACC6A0722431493A0051FE18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC6A0712431493A0051FE18 /* Assets.xcassets */; };
 		ACC6A0752431493A0051FE18 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC6A0742431493A0051FE18 /* Preview Assets.xcassets */; };
 		ACC6A0782431493A0051FE18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC6A0762431493A0051FE18 /* LaunchScreen.storyboard */; };
+		ACC6A0802431528C0051FE18 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6A07F2431528C0051FE18 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ACC6A0742431493A0051FE18 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACC6A0772431493A0051FE18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACC6A0792431493A0051FE18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACC6A07F2431528C0051FE18 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				ACC6A06B243149380051FE18 /* AppDelegate.swift */,
 				ACC6A06D243149380051FE18 /* SceneDelegate.swift */,
 				ACC6A06F243149380051FE18 /* ContentView.swift */,
+				ACC6A07F2431528C0051FE18 /* ImagePicker.swift */,
 				ACC6A0712431493A0051FE18 /* Assets.xcassets */,
 				ACC6A0762431493A0051FE18 /* LaunchScreen.storyboard */,
 				ACC6A0792431493A0051FE18 /* Info.plist */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC6A06C243149380051FE18 /* AppDelegate.swift in Sources */,
+				ACC6A0802431528C0051FE18 /* ImagePicker.swift in Sources */,
 				ACC6A06E243149380051FE18 /* SceneDelegate.swift in Sources */,
 				ACC6A070243149380051FE18 /* ContentView.swift in Sources */,
 			);
