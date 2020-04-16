@@ -12,18 +12,25 @@ import MapKit
 
 struct ContentView: View {
     
-    @State private var isUnlocked = true
+    @State private var isUnlocked = false
     @State private var centerCoordinate = CLLocationCoordinate2D()
     @State private var locations = [CodableMKPointAnnotation]()
     @State private var selectedPlace: MKPointAnnotation?
     @State private var showingPlaceDetails = false
     @State private var showingEditScreen = false
+    @State private var showingAuthenticationError = false
+    @State private var authenticationErrorString = "An error occurred."
     
     var body: some View {
         
         ZStack {
             if isUnlocked {
                 MyMapView(centerCoordinate: self.$centerCoordinate, selectedPlace: self.$selectedPlace, showingPlaceDetails: self.$showingPlaceDetails, locations: self.$locations, showingEditScreen: self.$showingEditScreen)
+                    .alert(isPresented: $showingPlaceDetails) {
+                        Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place information."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
+                            self.showingEditScreen = true
+                            })
+                }
             } else {
                 Button("Unlock Places") {
                     self.authenticate()
@@ -33,11 +40,11 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .clipShape(Capsule())
             }
+            
         }
-        .alert(isPresented: $showingPlaceDetails) {
-            Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place information."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
-                self.showingEditScreen = true
-                })
+            
+        .alert(isPresented: self.$showingAuthenticationError) {
+            Alert(title: Text("Authentication error"), message: Text(self.authenticationErrorString), dismissButton: .default(Text("OK")))
         }
         .sheet(isPresented: self.$showingEditScreen, onDismiss: saveData) {
             if self.selectedPlace != nil {
@@ -88,11 +95,15 @@ struct ContentView: View {
                     if success {
                         self.isUnlocked = true
                     } else {
-                        print(authenticationError?.localizedDescription ?? "Error occurred.")
+                        self.authenticationErrorString = authenticationError?.localizedDescription ?? "Error occurred."
+                        self.showingAuthenticationError = true
                     }
                 }
                 
             }
+        } else {
+            self.authenticationErrorString = "No biometric validation found."
+            self.showingAuthenticationError = true
         }
     }
 }
