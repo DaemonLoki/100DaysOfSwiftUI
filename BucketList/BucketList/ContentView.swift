@@ -12,7 +12,7 @@ import MapKit
 
 struct ContentView: View {
     
-    @State private var isUnlocked = false
+    @State private var isUnlocked = true
     @State private var centerCoordinate = CLLocationCoordinate2D()
     @State private var locations = [CodableMKPointAnnotation]()
     @State private var selectedPlace: MKPointAnnotation?
@@ -26,11 +26,6 @@ struct ContentView: View {
         ZStack {
             if isUnlocked {
                 MyMapView(centerCoordinate: self.$centerCoordinate, selectedPlace: self.$selectedPlace, showingPlaceDetails: self.$showingPlaceDetails, locations: self.$locations, showingEditScreen: self.$showingEditScreen)
-                    .alert(isPresented: $showingPlaceDetails) {
-                        Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place information."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
-                            self.showingEditScreen = true
-                            })
-                }
             } else {
                 Button("Unlock Places") {
                     self.authenticate()
@@ -50,6 +45,11 @@ struct ContentView: View {
             if self.selectedPlace != nil {
                 EditView(placemark: self.selectedPlace!)
             }
+        }
+        .alert(isPresented: $showingPlaceDetails) {
+            Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place information."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
+                self.showingEditScreen = true
+                })
         }
         .onAppear {
             self.loadData()
