@@ -19,6 +19,7 @@
 		AC1C6F2624437EDD00A36D1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1C6F2424437EDD00A36D1A /* LaunchScreen.storyboard */; };
 		AC1C6F2E24450D7100A36D1A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1C6F2D24450D7100A36D1A /* MapView.swift */; };
 		AC871E7124490ED600EB1BD0 /* MyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC871E7024490ED600EB1BD0 /* MyMapView.swift */; };
+		AC871E732449B7CB00EB1BD0 /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC871E722449B7CB00EB1BD0 /* PlaceDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		AC1C6F2724437EDD00A36D1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC1C6F2D24450D7100A36D1A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		AC871E7024490ED600EB1BD0 /* MyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapView.swift; sourceTree = "<group>"; };
+		AC871E722449B7CB00EB1BD0 /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,6 @@
 		AC1C6F0D24437EDB00A36D1A = {
 			isa = PBXGroup;
 			children = (
-				AC871E7024490ED600EB1BD0 /* MyMapView.swift */,
 				AC1C6F1824437EDB00A36D1A /* BucketList */,
 				AC1C6F1724437EDB00A36D1A /* Products */,
 			);
@@ -73,6 +74,8 @@
 				AC1C6F1B24437EDB00A36D1A /* SceneDelegate.swift */,
 				AC1C6F1D24437EDB00A36D1A /* ContentView.swift */,
 				AC0363D2244764D000ABA859 /* Result.swift */,
+				AC871E722449B7CB00EB1BD0 /* PlaceDetailView.swift */,
+				AC871E7024490ED600EB1BD0 /* MyMapView.swift */,
 				AC1C6F2D24450D7100A36D1A /* MapView.swift */,
 				AC0363CE244761E500ABA859 /* MKPointAnnotation-ObservableObject.swift */,
 				AC0363D02447626100ABA859 /* EditView.swift */,
@@ -169,6 +172,7 @@
 				AC0363D12447626100ABA859 /* EditView.swift in Sources */,
 				AC1C6F1C24437EDB00A36D1A /* SceneDelegate.swift in Sources */,
 				AC0363D3244764D000ABA859 /* Result.swift in Sources */,
+				AC871E732449B7CB00EB1BD0 /* PlaceDetailView.swift in Sources */,
 				AC0363CF244761E500ABA859 /* MKPointAnnotation-ObservableObject.swift in Sources */,
 				AC0363D524477E7F00ABA859 /* MKPointAnnotation-Codable.swift in Sources */,
 				AC1C6F1E24437EDB00A36D1A /* ContentView.swift in Sources */,

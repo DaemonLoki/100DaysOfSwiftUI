@@ -24,8 +24,28 @@ struct ContentView: View {
     var body: some View {
         
         ZStack {
+            Color.gray.opacity(0.4)
+                .edgesIgnoringSafeArea(.all)
+            
             if isUnlocked {
                 MyMapView(centerCoordinate: self.$centerCoordinate, selectedPlace: self.$selectedPlace, showingPlaceDetails: self.$showingPlaceDetails, locations: self.$locations, showingEditScreen: self.$showingEditScreen)
+                    .cornerRadius(showingPlaceDetails ? 20 : 0)
+                    .rotation3DEffect(.degrees(showingPlaceDetails ? 10 : 0), axis: (x: -1, y: 0, z: 0))
+                    .scaleEffect(showingPlaceDetails ? 0.8 : 1)
+                    .offset(x: 0, y: showingPlaceDetails ? -250 : 0)
+                    .shadow(radius: showingPlaceDetails ? 20 : 0)
+                    .animation(.easeInOut)
+                    .edgesIgnoringSafeArea(showingPlaceDetails ? [] : .all)
+                
+                PlaceDetailView(title: selectedPlace?.title ?? "Unknown", subtitle: selectedPlace?.subtitle ?? "Missing place information.", showingEditScreen: self.$showingEditScreen)
+                    .offset(x: 0, y: showingPlaceDetails ? 150 : 700)
+                    .animation(.easeInOut )
+                    .gesture(TapGesture()
+                        .onEnded({ _ in
+                            if self.showingPlaceDetails {
+                                self.showingPlaceDetails = false
+                            }
+                        }))
             } else {
                 Button("Unlock Places") {
                     self.authenticate()
@@ -38,6 +58,7 @@ struct ContentView: View {
             
         }
             
+            
         .alert(isPresented: self.$showingAuthenticationError) {
             Alert(title: Text("Authentication error"), message: Text(self.authenticationErrorString), dismissButton: .default(Text("OK")))
         }
@@ -45,11 +66,6 @@ struct ContentView: View {
             if self.selectedPlace != nil {
                 EditView(placemark: self.selectedPlace!)
             }
-        }
-        .alert(isPresented: $showingPlaceDetails) {
-            Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place information."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
-                self.showingEditScreen = true
-                })
         }
         .onAppear {
             self.loadData()

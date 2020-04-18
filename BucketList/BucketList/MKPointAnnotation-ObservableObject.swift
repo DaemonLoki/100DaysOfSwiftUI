@@ -24,7 +24,7 @@ extension MKPointAnnotation: ObservableObject {
     public var wrappedSubtitle: String {
         
         get {
-            self.subtitle ?? "Unkown value"
+            self.subtitle ?? ""
         }
         
         set {

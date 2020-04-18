@@ -36,7 +36,7 @@ struct MyMapView: View {
                     Button(action: {
                         let newLocation = CodableMKPointAnnotation()
                         newLocation.coordinate = self.centerCoordinate
-                        newLocation.title = "Example location"
+                        newLocation.title = ""
                         self.locations.append(newLocation)
                         self.selectedPlace = newLocation
                         self.showingEditScreen = true
@@ -48,7 +48,7 @@ struct MyMapView: View {
                             .font(.headline)
                             .clipShape(Circle())
                     }
-                    .padding(.trailing)
+                    .padding()
                     
                 }
             }
