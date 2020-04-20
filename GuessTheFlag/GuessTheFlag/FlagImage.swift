@@ -10,6 +10,7 @@ import SwiftUI
 
 struct FlagImage: View {
     let name: String
+    let label: String
     
     @State private var faded = false
     @State private var correctlyGuessed = false
@@ -23,6 +24,7 @@ struct FlagImage: View {
             .opacity(faded ? 0.2 : 1)
             .rotation3DEffect(correctlyGuessed ? .degrees(180) : .degrees(0), axis: (x: 0, y: 1, z: 0))
             .animation(.default)
+            .accessibility(label: Text(label))
     }
     
     func setCorrectlyGuessed() {
@@ -36,6 +38,6 @@ struct FlagImage: View {
 
 struct FlagImage_Previews: PreviewProvider {
     static var previews: some View {
-        FlagImage(name: "Germany")
+        FlagImage(name: "Germany", label: "Flag with three horizontal stripes of equal size. Top stripe black, middle stripe red, bottom stripe gold")
     }
 }
