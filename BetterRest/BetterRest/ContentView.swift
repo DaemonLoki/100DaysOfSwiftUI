@@ -35,6 +35,7 @@ struct ContentView: View {
                         Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
                             Text("\(sleepAmount, specifier: "%g") hours")
                         }
+                        .accessibility(label: Text("Selected \(sleepAmount) hours of desired sleep"))
                     }
                     
                     Section(header: Text("Daily coffee intake")) {
@@ -77,7 +78,7 @@ struct ContentView: View {
             bedTime = formatter.string(from: sleepTime)
         } catch {
             // Uh-oh something went wrong
-            bedTime = "Sorry, there was a problem calculating your bedtie."
+            bedTime = "Sorry, there was a problem calculating your bedtime."
         }
         
         return bedTime
