@@ -31,7 +31,7 @@ struct AstronautView: View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 VStack {
-                    Image(self.astronaut.id)
+                    Image(decorative: self.astronaut.id)
                         .resizable()
                         .scaledToFit()
                         .frame(width: geometry.size.width)
@@ -52,6 +52,8 @@ struct AstronautView: View {
                                     
                                     Text(mission.displayName)
                                 }
+                                .accessibilityElement(children: .ignore)
+                                .accessibility(label: Text(mission.displayName))
                             }
                         }
                         .padding()

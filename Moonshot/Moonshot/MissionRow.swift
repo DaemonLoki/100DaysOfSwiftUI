@@ -17,7 +17,7 @@ struct MissionRow: View {
     
     var body: some View {
         HStack(spacing: 20) {
-            Image(self.mission.image)
+            Image(decorative: self.mission.image)
             .resizable()
             .scaledToFit()
             .frame(width: 120, height: 120)

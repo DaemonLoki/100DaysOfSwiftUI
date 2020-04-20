@@ -19,7 +19,7 @@ struct AstronautRow: View {
         NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, missions: self.missions)) {
             HStack {
                 ZStack(alignment: .bottomTrailing) {
-                    Image(crewMember.astronaut.id)
+                    Image(decorative: crewMember.astronaut.id)
                         .resizable()
                         .frame(width: 83, height: 60)
                         .clipShape(Circle())
