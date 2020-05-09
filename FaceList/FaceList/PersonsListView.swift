@@ -22,8 +22,12 @@ struct PersonsListView: View {
             NavigationView {
                 VStack {
                     FilteredPersonList(filterKey: "", filterValue: "") { (person: Person) in
-                        NavigationLink(destination: PersonDetailView(person: person)) {
+                        ZStack {
                             ListElement(image: UIImage.loadFromDisk(with: person.wrappedImageId), name: person.wrappedName)
+                            
+                            NavigationLink(destination: PersonDetailView(person: person)) {
+                                EmptyView()
+                            }
                         }
                     }
                     

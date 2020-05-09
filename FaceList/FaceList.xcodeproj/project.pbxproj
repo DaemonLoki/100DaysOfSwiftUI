@@ -25,6 +25,7 @@
 		AC71AF3F2454CD2400858518 /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71AF3E2454CD2400858518 /* ListElement.swift */; };
 		ACD72E5924671F59000E6928 /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD72E5824671F59000E6928 /* PersonDetailView.swift */; };
 		ACD72E5B24671FC9000E6928 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD72E5A24671FC9000E6928 /* LocationFetcher.swift */; };
+		ACD72E5D24672403000E6928 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD72E5C24672403000E6928 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		AC71AF3E2454CD2400858518 /* ListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElement.swift; sourceTree = "<group>"; };
 		ACD72E5824671F59000E6928 /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
 		ACD72E5A24671FC9000E6928 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		ACD72E5C24672403000E6928 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				AC71AF322453992200858518 /* Preview Content */,
 				AC01AE692458CB5E0088C129 /* UIImage+IO.swift */,
 				ACD72E5A24671FC9000E6928 /* LocationFetcher.swift */,
+				ACD72E5C24672403000E6928 /* MapView.swift */,
 			);
 			path = FaceList;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC01AE5C245776820088C129 /* CGFloat+Dimensions.swift in Sources */,
+				ACD72E5D24672403000E6928 /* MapView.swift in Sources */,
 				AC01AE6A2458CB5E0088C129 /* UIImage+IO.swift in Sources */,
 				ACD72E5B24671FC9000E6928 /* LocationFetcher.swift in Sources */,
 				AC01AE5E2457887B0088C129 /* PersonsListView.swift in Sources */,
