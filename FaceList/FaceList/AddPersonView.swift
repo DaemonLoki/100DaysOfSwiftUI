@@ -18,6 +18,8 @@ struct AddPersonView: View {
     
     @State private var personName = ""
     
+    let locationFetcher = LocationFetcher()
+    
     var isButtonDisabled: Bool {
         image == nil || personName.isEmpty
     }
@@ -55,9 +57,13 @@ struct AddPersonView: View {
                     Button(action: {
                         guard let userImage = self.image else { return }
                         
+                        let location = self.locationFetcher.lastKnownLocation
+                        
                         let person = Person(context: self.moc)
                         person.imageId = userImage.writeToDisk()
                         person.name = self.personName
+                        person.latitude = location?.latitude ?? 0.0
+                        person.longitude = location?.longitude ?? 0.0
                         
                         try? self.moc.save()
                         
@@ -76,6 +82,9 @@ struct AddPersonView: View {
                     .padding(.bottom)
                 }
                 .navigationBarTitle("Add person")
+            }
+            .onAppear {
+                self.locationFetcher.start()
             }
         }
     }

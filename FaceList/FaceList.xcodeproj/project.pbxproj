@@ -23,6 +23,8 @@
 		AC71AF342453992200858518 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC71AF332453992200858518 /* Preview Assets.xcassets */; };
 		AC71AF372453992200858518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC71AF352453992200858518 /* LaunchScreen.storyboard */; };
 		AC71AF3F2454CD2400858518 /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71AF3E2454CD2400858518 /* ListElement.swift */; };
+		ACD72E5924671F59000E6928 /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD72E5824671F59000E6928 /* PersonDetailView.swift */; };
+		ACD72E5B24671FC9000E6928 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD72E5A24671FC9000E6928 /* LocationFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		AC71AF362453992200858518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC71AF382453992200858518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC71AF3E2454CD2400858518 /* ListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElement.swift; sourceTree = "<group>"; };
+		ACD72E5824671F59000E6928 /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
+		ACD72E5A24671FC9000E6928 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				AC71AF3E2454CD2400858518 /* ListElement.swift */,
 				AC01AE5924576FEF0088C129 /* ImagePicker.swift */,
 				AC01AE5D2457887B0088C129 /* PersonsListView.swift */,
+				ACD72E5824671F59000E6928 /* PersonDetailView.swift */,
 				AC01AE632458C2560088C129 /* FilteredPersonList.swift */,
 				AC71AF302453992200858518 /* Assets.xcassets */,
 				AC71AF352453992200858518 /* LaunchScreen.storyboard */,
@@ -93,6 +98,7 @@
 				AC01AE5B245776820088C129 /* CGFloat+Dimensions.swift */,
 				AC71AF322453992200858518 /* Preview Content */,
 				AC01AE692458CB5E0088C129 /* UIImage+IO.swift */,
+				ACD72E5A24671FC9000E6928 /* LocationFetcher.swift */,
 			);
 			path = FaceList;
 			sourceTree = "<group>";
@@ -178,6 +184,7 @@
 			files = (
 				AC01AE5C245776820088C129 /* CGFloat+Dimensions.swift in Sources */,
 				AC01AE6A2458CB5E0088C129 /* UIImage+IO.swift in Sources */,
+				ACD72E5B24671FC9000E6928 /* LocationFetcher.swift in Sources */,
 				AC01AE5E2457887B0088C129 /* PersonsListView.swift in Sources */,
 				AC01AE6024578A0E0088C129 /* AddPersonView.swift in Sources */,
 				AC71AF282453992100858518 /* AppDelegate.swift in Sources */,
@@ -188,6 +195,7 @@
 				AC01AE5A24576FEF0088C129 /* ImagePicker.swift in Sources */,
 				AC01AE682458C8520088C129 /* Person+CoreDataProperties.swift in Sources */,
 				AC71AF2A2453992100858518 /* SceneDelegate.swift in Sources */,
+				ACD72E5924671F59000E6928 /* PersonDetailView.swift in Sources */,
 				AC71AF3F2454CD2400858518 /* ListElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

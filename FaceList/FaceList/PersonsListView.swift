@@ -22,10 +22,8 @@ struct PersonsListView: View {
             NavigationView {
                 VStack {
                     FilteredPersonList(filterKey: "", filterValue: "") { (person: Person) in
-                        ListElement(image: UIImage.loadFromDisk(with: person.wrappedImageId), name: person.wrappedName)
-                            .onTapGesture {
-                                person.name = "Test Name"
-                                try? self.moc.save()
+                        NavigationLink(destination: PersonDetailView(person: person)) {
+                            ListElement(image: UIImage.loadFromDisk(with: person.wrappedImageId), name: person.wrappedName)
                         }
                     }
                     
