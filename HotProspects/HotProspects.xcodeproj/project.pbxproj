@@ -15,6 +15,7 @@
 		ACD72E772467397E000E6928 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD72E752467397E000E6928 /* LaunchScreen.storyboard */; };
 		ACF2693A246B3C4F00733AD6 /* ProspectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF26939246B3C4F00733AD6 /* ProspectView.swift */; };
 		ACF2693C246B3C5400733AD6 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2693B246B3C5400733AD6 /* MeView.swift */; };
+		ACF2693E246B3F3400733AD6 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2693D246B3F3400733AD6 /* Prospect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		ACD72E782467397E000E6928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACF26939246B3C4F00733AD6 /* ProspectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectView.swift; sourceTree = "<group>"; };
 		ACF2693B246B3C5400733AD6 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		ACF2693D246B3F3400733AD6 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				ACD72E6A2467397C000E6928 /* AppDelegate.swift */,
 				ACD72E6C2467397C000E6928 /* SceneDelegate.swift */,
 				ACD72E6E2467397C000E6928 /* ContentView.swift */,
+				ACF2693D246B3F3400733AD6 /* Prospect.swift */,
 				ACD72E702467397E000E6928 /* Assets.xcassets */,
 				ACD72E752467397E000E6928 /* LaunchScreen.storyboard */,
 				ACD72E782467397E000E6928 /* Info.plist */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF2693A246B3C4F00733AD6 /* ProspectView.swift in Sources */,
+				ACF2693E246B3F3400733AD6 /* Prospect.swift in Sources */,
 				ACD72E6B2467397C000E6928 /* AppDelegate.swift in Sources */,
 				ACD72E6D2467397C000E6928 /* SceneDelegate.swift in Sources */,
 				ACD72E6F2467397C000E6928 /* ContentView.swift in Sources */,
