@@ -22,8 +22,10 @@ struct ProspectView: View {
         case none, contacted, uncontacted
     }
     
-    enum SortType {
-        case none, name, recent
+    enum SortType: String, CaseIterable {
+        case none = "None"
+        case name = "Name"
+        case recent = "Recent"
     }
     
     let filter: FilterType
@@ -110,18 +112,12 @@ struct ProspectView: View {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
             }
             .actionSheet(isPresented: self.$isShowingFilterSheet) {
-                ActionSheet(title: Text("Filter by"), message: nil, buttons: [
-                    .default(Text("None"), action: {
-                        self.sortingType = .none
-                    }),
-                    .default(Text("Name"), action: {
-                        self.sortingType = .name
-                    }),
-                    .default(Text("Recent"), action: {
-                        self.sortingType = .recent
-                    }),
-                    .cancel(Text("Cancel"))
-                ])
+                ActionSheet(title: Text("Filter by"), message: nil, buttons:
+                    SortType.allCases.map({ (sortType: SortType) -> ActionSheet.Button in
+                        ActionSheet.Button.default(Text(sortType.rawValue)) {
+                            self.sortingType = sortType
+                        }
+                    }) + [.cancel(Text("Cancel"))])
             }
         }
     }
