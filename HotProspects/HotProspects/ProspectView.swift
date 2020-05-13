@@ -15,9 +15,15 @@ struct ProspectView: View {
     @EnvironmentObject var prospects: Prospects
     
     @State private var isShowingScanner = false
+    @State private var sortingType: SortType = .none
+    @State private var isShowingFilterSheet = false
     
     enum FilterType {
         case none, contacted, uncontacted
+    }
+    
+    enum SortType {
+        case none, name, recent
     }
     
     let filter: FilterType
@@ -34,13 +40,24 @@ struct ProspectView: View {
     }
     
     var filteredProspects: [Prospect] {
+        let sortedPeople = prospects.people.sorted {
+            switch self.sortingType {
+            case .none:
+                return true
+            case .name:
+                return $0.name > $1.name
+            case .recent:
+                return $0.dateAdded > $1.dateAdded
+            }
+        }
+        
         switch filter {
         case .none:
-            return prospects.people
+            return sortedPeople
         case .contacted:
-            return prospects.people.filter { $0.isContacted }
+            return sortedPeople.filter { $0.isContacted }
         case .uncontacted:
-            return prospects.people.filter { !$0.isContacted }
+            return sortedPeople.filter { !$0.isContacted }
         }
     }
     
@@ -78,14 +95,33 @@ struct ProspectView: View {
                 }
             }
             .navigationBarTitle(title)
-            .navigationBarItems(trailing: Button(action: {
-                self.isShowingScanner = true
+            .navigationBarItems(leading: Button(action: {
+                self.isShowingFilterSheet = true
             }) {
-                Image(systemName: "qrcode.viewfinder")
-                Text("Scan")
+                Text("Sort")
+                }, trailing:
+                Button(action: {
+                    self.isShowingScanner = true
+                }) {
+                    Image(systemName: "qrcode.viewfinder")
+                    Text("Scan")
             })
                 .sheet(isPresented: $isShowingScanner) {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
+            }
+            .actionSheet(isPresented: self.$isShowingFilterSheet) {
+                ActionSheet(title: Text("Filter by"), message: nil, buttons: [
+                    .default(Text("None"), action: {
+                        self.sortingType = .none
+                    }),
+                    .default(Text("Name"), action: {
+                        self.sortingType = .name
+                    }),
+                    .default(Text("Recent"), action: {
+                        self.sortingType = .recent
+                    }),
+                    .cancel(Text("Cancel"))
+                ])
             }
         }
     }
@@ -110,17 +146,17 @@ struct ProspectView: View {
     
     func addNotification(for prospect: Prospect) {
         let center = UNUserNotificationCenter.current()
-
+        
         let addRequest = {
             let content = UNMutableNotificationContent()
             content.title = "Contact \(prospect.name)"
             content.subtitle = prospect.emailAddress
             content.sound = UNNotificationSound.default
-
+            
             var dateComponents = DateComponents()
             dateComponents.hour = 9
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-
+            
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)
         }
