@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CodeScanner
+import UserNotifications
 
 struct ProspectView: View {
     
@@ -57,6 +58,12 @@ struct ProspectView: View {
                         Button(prospect.isContacted ? "Mark Uncontacted" : "Mark Contacted") {
                             self.prospects.toggle(prospect)
                         }
+                        
+                        if !prospect.isContacted {
+                            Button("Remind Me") {
+                                self.addNotification(for: prospect)
+                            }
+                        }
                     }
                 }
             }
@@ -88,6 +95,38 @@ struct ProspectView: View {
             self.prospects.add(person)
         case .failure(let error):
             print("Scanning failed! Reason: \(error.localizedDescription)")
+        }
+    }
+    
+    func addNotification(for prospect: Prospect) {
+        let center = UNUserNotificationCenter.current()
+
+        let addRequest = {
+            let content = UNMutableNotificationContent()
+            content.title = "Contact \(prospect.name)"
+            content.subtitle = prospect.emailAddress
+            content.sound = UNNotificationSound.default
+
+            var dateComponents = DateComponents()
+            dateComponents.hour = 9
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            center.add(request)
+        }
+        
+        center.getNotificationSettings { settings in
+            if settings.authorizationStatus == .authorized {
+                addRequest()
+            } else {
+                center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    if success {
+                        addRequest()
+                    } else {
+                        print("D'oh")
+                    }
+                }
+            }
         }
     }
 }
