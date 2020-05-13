@@ -18,10 +18,13 @@ class Prospect: Identifiable, Codable {
 class Prospects: ObservableObject {
     @Published private(set) var people: [Prospect]
     
-    fileprivate let dataKey = "SavedData"
+    fileprivate static let dataKey = "SavedData"
     
     init() {
-        if let data = UserDefaults.standard.data(forKey: dataKey) {
+        let url = Self.getDocumentsDirectory().appendingPathComponent("\(Self.dataKey).json")
+        
+        let data = try? Data(contentsOf: url)
+        if let data = data {
             if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
                 self.people = decoded
                 return
@@ -42,8 +45,24 @@ class Prospects: ObservableObject {
     }
     
     private func save() {
+        let url = Self.getDocumentsDirectory().appendingPathComponent("\(Self.dataKey).json")
+
         if let encoded = try? JSONEncoder().encode(self.people) {
-            UserDefaults.standard.set(encoded, forKey: dataKey)
+            try? encoded.write(to: url, options: [.atomicWrite, .completeFileProtection])
         }
+    }
+    
+    static func getDocumentsDirectory() -> URL {
+        // find all possible documents directories for this user
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+
+        // just send back the first one, which ought to be the only one
+        return paths[0]
+    }
+}
+
+struct Prospect_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
