@@ -14,8 +14,12 @@ struct ContentView: View {
     
     @State private var cards = [Card]()
     @State private var isActive = true
-    @State private var timeRemaining = 100
+    @State private var timeRemaining = ContentView.availableTime
     @State private var showingEditScreen = false
+    @State private var showingSettingsScreen = false
+    @State private var removeWrongAnswers = true
+    
+    static let availableTime = 100
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -26,37 +30,56 @@ struct ContentView: View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
             
-            VStack {
-                Text("Time: \(timeRemaining)")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 5)
-                    .background(
-                        Capsule()
-                            .fill(Color.black)
-                            .opacity(0.75))
-                
-                ZStack {
-                    ForEach(0..<cards.count, id: \.self) { index in
-                        CardView(card: self.cards[index]) {
-                            withAnimation {
-                                self.removeCard(at: index)
-                            }
-                        }
-                        .stacked(at: index, in: self.cards.count)
-                        .allowsHitTesting(index == self.cards.count - 1)
-                        .accessibility(hidden: index < self.cards.count - 1)
+            if showingSettingsScreen {
+                HStack {
+                    Spacer()
+                    
+                    Toggle(isOn: $removeWrongAnswers) {
+                        Text("Remove wrong answers")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            
                     }
+                    .padding(30)
+                    .background(Color.black.opacity(0.7))
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .padding(80)
+                    
+                    Spacer()
                 }
-                .allowsHitTesting(timeRemaining > 0)
-                
-                if cards.isEmpty {
-                    Button("Start Again", action: resetCards)
-                        .padding()
-                        .background(Color.white)
-                        .foregroundColor(.black)
-                        .clipShape(Capsule())
+            } else {
+                VStack {
+                    Text("Time: \(timeRemaining)")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 5)
+                        .background(
+                            Capsule()
+                                .fill(Color.black)
+                                .opacity(0.75))
+                    
+                    ZStack {
+                        ForEach(0..<cards.count, id: \.self) { index in
+                            CardView(card: self.cards[index], removeWrongAnswers: self.removeWrongAnswers) { (rightAnswer: Bool) in
+                                withAnimation {
+                                    self.removeCard(at: index, rightAnswer: rightAnswer)
+                                }
+                            }
+                            .stacked(at: index, in: self.cards.count)
+                            .allowsHitTesting(index == self.cards.count - 1)
+                            .accessibility(hidden: index < self.cards.count - 1)
+                        }
+                    }
+                    .allowsHitTesting(timeRemaining > 0)
+                    
+                    if cards.isEmpty {
+                        Button("Start Again", action: resetCards)
+                            .padding()
+                            .background(Color.white)
+                            .foregroundColor(.black)
+                            .clipShape(Capsule())
+                    }
                 }
             }
             
@@ -65,12 +88,21 @@ struct ContentView: View {
                     Spacer()
                     
                     Button(action: {
+                        self.showingSettingsScreen.toggle()
+                    }) {
+                        Image(systemName: self.showingSettingsScreen ? "xmark.circle" :  "folder.circle")
+                            .padding()
+                            .background(Color.black.opacity(0.7))
+                            .clipShape(Circle())
+                    }
+                    
+                    Button(action: {
                         self.showingEditScreen = true
                     }) {
                         Image(systemName: "plus.circle")
-                        .padding()
+                            .padding()
                             .background(Color.black.opacity(0.7))
-                        .clipShape(Circle())
+                            .clipShape(Circle())
                     }
                 }
                 
@@ -98,7 +130,7 @@ struct ContentView: View {
                         .accessibility(label: Text("Wrong"))
                         .accessibility(hint: Text("Mark your answer as being incorrect."))
                         Spacer()
-
+                        
                         Button(action: {
                             withAnimation {
                                 self.removeCard(at: self.cards.count - 1)
@@ -127,6 +159,11 @@ struct ContentView: View {
             guard self.isActive else { return }
             if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
+            } else {
+                withAnimation {
+                    self.cards.removeAll()
+                    self.isActive = false
+                }
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { (_) in
@@ -148,14 +185,21 @@ struct ContentView: View {
     }
     
     func resetCards() {
-        timeRemaining = 100
+        timeRemaining = ContentView.availableTime
         isActive = true
         loadData()
     }
     
-    func removeCard(at index: Int) {
+    func removeCard(at index: Int, rightAnswer: Bool = true) {
         guard index >= 0 else { return }
-        cards.remove(at: index)
+        
+        if !removeWrongAnswers && !rightAnswer {
+            cards.move(fromOffsets: [index] as IndexSet, toOffset: 0)
+            return
+        } else {
+            cards.remove(at: index)
+        }
+        
         if cards.isEmpty {
             isActive = false
         }

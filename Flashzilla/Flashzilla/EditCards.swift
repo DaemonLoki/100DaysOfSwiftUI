@@ -19,7 +19,7 @@ struct EditCards: View {
         NavigationView {
             List {
                 Section(header: Text("Add new card")) {
-                    TextField("Propmt", text: $newPrompt)
+                    TextField("Prompt", text: $newPrompt)
                     TextField("Answer", text: $newAnswer)
                     Button("Add card", action: addCard)
                 }
