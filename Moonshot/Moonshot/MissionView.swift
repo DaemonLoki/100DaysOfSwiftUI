@@ -20,6 +20,8 @@ struct MissionView: View {
     
     let astronauts: [CrewMember]
     
+    let baseline: CGFloat = 44
+        
     init(mission: Mission, missions: [Mission], astronauts: [Astronaut]) {
         self.mission = mission
         self.missions = missions
@@ -38,14 +40,14 @@ struct MissionView: View {
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            ScrollView(.vertical) {
+        ScrollView(.vertical) {
+            GeometryReader { (geometry: GeometryProxy) in
                 VStack {
                     Image(decorative: self.mission.image)
                         .resizable()
                         .scaledToFit()
-                        .frame(maxWidth: geometry.size.width * 0.7)
-                        .padding(.top)
+                        .frame(width: 300, height: 300 + self.calcScale(with: geometry.frame(in: .global).minY))
+                        .padding(.top, 30)
                     
                     if self.mission.launchDate != nil {
                         Text(self.mission.formattedLaunchDate)
@@ -66,6 +68,14 @@ struct MissionView: View {
             }
         }
         .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
+    }
+    
+    func calcScale(with offset: CGFloat) -> CGFloat {
+        if offset == baseline {
+            return 0
+        }
+        
+        return offset - baseline
     }
 }
 
