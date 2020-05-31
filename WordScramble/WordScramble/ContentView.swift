@@ -10,7 +10,21 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var usedWords = [String]()
+    //@State private var usedWords = [String]()
+    @State private var usedWords = [
+        "Hey",
+        "These",
+        "Are",
+        "The",
+        "words",
+        "we",
+        "are",
+        "using",
+        "to",
+        "test",
+        "this",
+        "feature"
+    ]
     @State private var rootWord = ""
     @State private var newWord = ""
     @State private var score: CGFloat = 0
@@ -37,7 +51,7 @@ struct ContentView: View {
                             .fill(Color.clear)
                             .frame(width: 300, height: 30)
                             .modifier(ScoreModifier(score: score))
-                        .padding()
+                            .padding()
                     }
                     .padding(.top)
                     .background(Color.init(.secondarySystemBackground))
@@ -53,10 +67,15 @@ struct ContentView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                     
-                    List(usedWords, id: \.self) { word in
-                        HStack {
-                            Image(systemName: "\(word.count).circle")
-                            Text(word)
+                    
+                    List(self.usedWords, id: \.self) { word in
+                        GeometryReader { geo in
+                            HStack {
+                                Image(systemName: "\(word.count).circle")
+                                Text(word)
+                                Spacer()
+                            }
+                            .offset(x: geo.frame(in: .global).midY * 2 / geo.size.height)
                         }
                         .accessibilityElement(children: .ignore)
                         .accessibility(label: Text("\(word), \(word.count) letters"))
@@ -90,7 +109,7 @@ struct ContentView: View {
         let allWords = startWords.components(separatedBy: "\n")
         
         rootWord = allWords.randomElement() ?? "silkworm"
-        usedWords = []
+        //usedWords = []
         newWord = ""
         withAnimation(.easeInOut(duration: animationDuration)) {
             score = 0
