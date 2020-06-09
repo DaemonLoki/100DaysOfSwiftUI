@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC8863DA248C444B00263BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8863D9248C444B00263BD2 /* AppDelegate.swift */; };
+		AC8863DC248C444B00263BD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8863DB248C444B00263BD2 /* SceneDelegate.swift */; };
+		AC8863DF248C444B00263BD2 /* RollTheDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC8863DD248C444B00263BD2 /* RollTheDice.xcdatamodeld */; };
+		AC8863E1248C444B00263BD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8863E0248C444B00263BD2 /* ContentView.swift */; };
+		AC8863E3248C445500263BD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8863E2248C445500263BD2 /* Assets.xcassets */; };
+		AC8863E6248C445500263BD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8863E5248C445500263BD2 /* Preview Assets.xcassets */; };
+		AC8863E9248C445500263BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8863E7248C445500263BD2 /* LaunchScreen.storyboard */; };
+		AC8863F2248C47B700263BD2 /* Roll+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8863F0248C47B700263BD2 /* Roll+CoreDataClass.swift */; };
+		AC8863F3248C47B700263BD2 /* Roll+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8863F1248C47B700263BD2 /* Roll+CoreDataProperties.swift */; };
+		AC8863F5248C48CD00263BD2 /* RollsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8863F4248C48CD00263BD2 /* RollsViewModel.swift */; };
+		AC8863F7248C4F0600263BD2 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8863F6248C4F0600263BD2 /* HistoryView.swift */; };
+		AC8863F9248C4F2F00263BD2 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8863F8248C4F2F00263BD2 /* FilteredList.swift */; };
+		AC8863FB248C51B000263BD2 /* RollDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8863FA248C51B000263BD2 /* RollDiceView.swift */; };
+		AC886400248D8B1E00263BD2 /* PolygonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8863FF248D8B1E00263BD2 /* PolygonShape.swift */; };
+		ACC2DFFD248FC380008CBBA5 /* AnimatingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2DFFC248FC380008CBBA5 /* AnimatingText.swift */; };
+		ACF924D6248EDE8B004FB1B9 /* RollListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF924D5248EDE8B004FB1B9 /* RollListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC8863D6248C444B00263BD2 /* RollTheDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollTheDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC8863D9248C444B00263BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC8863DB248C444B00263BD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AC8863DE248C444B00263BD2 /* RollTheDice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RollTheDice.xcdatamodel; sourceTree = "<group>"; };
+		AC8863E0248C444B00263BD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AC8863E2248C445500263BD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC8863E5248C445500263BD2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC8863E8248C445500263BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC8863EA248C445500263BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC8863F0248C47B700263BD2 /* Roll+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roll+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AC8863F1248C47B700263BD2 /* Roll+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roll+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AC8863F4248C48CD00263BD2 /* RollsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollsViewModel.swift; sourceTree = "<group>"; };
+		AC8863F6248C4F0600263BD2 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		AC8863F8248C4F2F00263BD2 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
+		AC8863FA248C51B000263BD2 /* RollDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDiceView.swift; sourceTree = "<group>"; };
+		AC8863FF248D8B1E00263BD2 /* PolygonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShape.swift; sourceTree = "<group>"; };
+		ACC2DFFC248FC380008CBBA5 /* AnimatingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingText.swift; sourceTree = "<group>"; };
+		ACF924D5248EDE8B004FB1B9 /* RollListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC8863D3248C444B00263BD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC8863CD248C444B00263BD2 = {
+			isa = PBXGroup;
+			children = (
+				AC8863D8248C444B00263BD2 /* RollTheDice */,
+				AC8863D7248C444B00263BD2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC8863D7248C444B00263BD2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC8863D6248C444B00263BD2 /* RollTheDice.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC8863D8248C444B00263BD2 /* RollTheDice */ = {
+			isa = PBXGroup;
+			children = (
+				AC8863FE248D7FB800263BD2 /* ViewModel */,
+				AC8863FD248D7FB200263BD2 /* View */,
+				AC8863FC248D7FA000263BD2 /* Model */,
+				AC8863D9248C444B00263BD2 /* AppDelegate.swift */,
+				AC8863DB248C444B00263BD2 /* SceneDelegate.swift */,
+				AC8863E2248C445500263BD2 /* Assets.xcassets */,
+				AC8863E7248C445500263BD2 /* LaunchScreen.storyboard */,
+				AC8863EA248C445500263BD2 /* Info.plist */,
+				AC8863E4248C445500263BD2 /* Preview Content */,
+			);
+			path = RollTheDice;
+			sourceTree = "<group>";
+		};
+		AC8863E4248C445500263BD2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AC8863E5248C445500263BD2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC8863FC248D7FA000263BD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC8863DD248C444B00263BD2 /* RollTheDice.xcdatamodeld */,
+				AC8863F0248C47B700263BD2 /* Roll+CoreDataClass.swift */,
+				AC8863F1248C47B700263BD2 /* Roll+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AC8863FD248D7FB200263BD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC8863E0248C444B00263BD2 /* ContentView.swift */,
+				AC8863F8248C4F2F00263BD2 /* FilteredList.swift */,
+				AC8863F6248C4F0600263BD2 /* HistoryView.swift */,
+				AC8863FF248D8B1E00263BD2 /* PolygonShape.swift */,
+				AC8863FA248C51B000263BD2 /* RollDiceView.swift */,
+				ACF924D5248EDE8B004FB1B9 /* RollListView.swift */,
+				ACC2DFFC248FC380008CBBA5 /* AnimatingText.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AC8863FE248D7FB800263BD2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC8863F4248C48CD00263BD2 /* RollsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC8863D5248C444B00263BD2 /* RollTheDice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC8863ED248C445500263BD2 /* Build configuration list for PBXNativeTarget "RollTheDice" */;
+			buildPhases = (
+				AC8863D2248C444B00263BD2 /* Sources */,
+				AC8863D3248C444B00263BD2 /* Frameworks */,
+				AC8863D4248C444B00263BD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RollTheDice;
+			productName = RollTheDice;
+			productReference = AC8863D6248C444B00263BD2 /* RollTheDice.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC8863CE248C444B00263BD2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Stefan Blos";
+				TargetAttributes = {
+					AC8863D5248C444B00263BD2 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = AC8863D1248C444B00263BD2 /* Build configuration list for PBXProject "RollTheDice" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC8863CD248C444B00263BD2;
+			productRefGroup = AC8863D7248C444B00263BD2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC8863D5248C444B00263BD2 /* RollTheDice */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC8863D4248C444B00263BD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC8863E9248C445500263BD2 /* LaunchScreen.storyboard in Resources */,
+				AC8863E6248C445500263BD2 /* Preview Assets.xcassets in Resources */,
+				AC8863E3248C445500263BD2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC8863D2248C444B00263BD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC8863DA248C444B00263BD2 /* AppDelegate.swift in Sources */,
+				AC886400248D8B1E00263BD2 /* PolygonShape.swift in Sources */,
+				ACC2DFFD248FC380008CBBA5 /* AnimatingText.swift in Sources */,
+				AC8863F7248C4F0600263BD2 /* HistoryView.swift in Sources */,
+				AC8863F9248C4F2F00263BD2 /* FilteredList.swift in Sources */,
+				AC8863F2248C47B700263BD2 /* Roll+CoreDataClass.swift in Sources */,
+				ACF924D6248EDE8B004FB1B9 /* RollListView.swift in Sources */,
+				AC8863DC248C444B00263BD2 /* SceneDelegate.swift in Sources */,
+				AC8863E1248C444B00263BD2 /* ContentView.swift in Sources */,
+				AC8863F3248C47B700263BD2 /* Roll+CoreDataProperties.swift in Sources */,
+				AC8863F5248C48CD00263BD2 /* RollsViewModel.swift in Sources */,
+				AC8863FB248C51B000263BD2 /* RollDiceView.swift in Sources */,
+				AC8863DF248C444B00263BD2 /* RollTheDice.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC8863E7248C445500263BD2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC8863E8248C445500263BD2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC8863EB248C445500263BD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC8863EC248C445500263BD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC8863EE248C445500263BD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"RollTheDice/Preview Content\"";
+				DEVELOPMENT_TEAM = JY49624W8T;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = RollTheDice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.stefanblos.RollTheDice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC8863EF248C445500263BD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"RollTheDice/Preview Content\"";
+				DEVELOPMENT_TEAM = JY49624W8T;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = RollTheDice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.stefanblos.RollTheDice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC8863D1248C444B00263BD2 /* Build configuration list for PBXProject "RollTheDice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC8863EB248C445500263BD2 /* Debug */,
+				AC8863EC248C445500263BD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC8863ED248C445500263BD2 /* Build configuration list for PBXNativeTarget "RollTheDice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC8863EE248C445500263BD2 /* Debug */,
+				AC8863EF248C445500263BD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC8863DD248C444B00263BD2 /* RollTheDice.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC8863DE248C444B00263BD2 /* RollTheDice.xcdatamodel */,
+			);
+			currentVersion = AC8863DE248C444B00263BD2 /* RollTheDice.xcdatamodel */;
+			path = RollTheDice.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AC8863CE248C444B00263BD2 /* Project object */;
+}
