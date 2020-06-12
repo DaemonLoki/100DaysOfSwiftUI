@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ResortView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+    @EnvironmentObject var favorites: Favorites
     
     @State private var selectedFacility: Facility?
     
@@ -50,10 +51,7 @@ struct ResortView: View {
                     
                     Text("Facilities")
                         .font(.headline)
-                    
-                    Text(ListFormatter.localizedString(byJoining: resort.facilities))
-                        .padding(.vertical)
-                    
+                                        
                     HStack {
                         ForEach(resort.facilityTypes) { facility in
                             facility.icon
@@ -67,6 +65,15 @@ struct ResortView: View {
                 }
                 .padding(.horizontal)
             }
+            
+            Button(favorites.contains(resort) ? "Remove from Favorites" : "Add to Favorites") {
+                if self.favorites.contains(self.resort) {
+                    self.favorites.remove(self.resort)
+                } else {
+                    self.favorites.add(self.resort)
+                }
+            }
+            .padding()
         }
         .alert(item: $selectedFacility) { facility in
             facility.alert
