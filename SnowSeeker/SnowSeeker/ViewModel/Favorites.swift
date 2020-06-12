@@ -17,9 +17,7 @@ class Favorites: ObservableObject {
 
     init() {
         // load our saved data
-
-        // still here? Use an empty array
-        self.resorts = []
+        resorts = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: saveKey) as? Data ?? Data()) as? Set<String> ?? []
     }
 
     // returns true if our set contains this resort
@@ -43,5 +41,6 @@ class Favorites: ObservableObject {
 
     func save() {
         // write out our data
+        try? UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: resorts, requiringSecureCoding: false), forKey: saveKey)
     }
 }

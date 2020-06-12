@@ -25,5 +25,16 @@ struct Resort: Codable, Identifiable {
         facilities.map(Facility.init)
     }
     
+    static func string(for size: Int) -> String {
+        switch size {
+        case 1:
+            return "Small"
+        case 2:
+            return "Average"
+        default:
+            return "Large"
+        }
+    }
+    
     static let example = (Bundle.main.decode("resorts.json") as [Resort])[0]
 }

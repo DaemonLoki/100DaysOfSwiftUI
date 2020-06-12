@@ -11,8 +11,14 @@ import SwiftUI
 struct WelcomeView: View {
     var body: some View {
         VStack {
-            Text("Welcom to SnowSeeker!")
+            Text("Welcome to SnowSeeker!")
                 .font(.largeTitle)
+            
+            Image(decorative: "snowboard")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 400, height: 400)
+
             
             Text("Please select a resort from the left-hand menu; swipe from the left edge to show it.")
                 .foregroundColor(.secondary)
